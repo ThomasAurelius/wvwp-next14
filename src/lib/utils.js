@@ -1,5 +1,6 @@
 const { default: mongoose } = require("mongoose");
 
+
 const connection = {};
 
 export const connectToDb = async () => {

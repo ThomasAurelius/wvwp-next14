@@ -1,7 +1,11 @@
+import { Int32, ObjectId } from 'mongodb';
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-   
+   _id : {
+      type: String,
+      required: true
+   },
    email: {
       type: String,
       required: true,
@@ -25,7 +29,10 @@ const userSchema = new mongoose.Schema({
 });
 
 const playerSchema = new mongoose.Schema({
-      
+      _id: {
+         type: ObjectId,
+         required: true
+      },
       age: {
          type: Number,
          required: true
@@ -59,7 +66,7 @@ const playerSchema = new mongoose.Schema({
          required: true
       },
       dob: {
-         type: String,
+         type: Date,
          required: true
       },
       gender: {
@@ -98,6 +105,18 @@ const playerSchema = new mongoose.Schema({
          type: String,
          required: false
       },  
+      userId: {
+         type: String,
+         required: true
+      },
+      createdAt: {
+         type: Date,
+         required: true
+      },
+      updatedAt: {
+         type: Date,
+         required: true
+      },
       } , {
       timestamps: true
    
