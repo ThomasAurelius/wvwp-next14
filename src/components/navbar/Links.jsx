@@ -10,6 +10,10 @@ import NavLink from './links/navLink/navLink';
          path: "/",
       },
       {
+         title: "About",
+         path: "/about",
+      },
+      {
          title: "Players",
          path: "/players",
       },
