@@ -1,4 +1,4 @@
-import { Int32, ObjectId } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
@@ -42,6 +42,8 @@ const postSchema = new mongoose.Schema({
       type: String,
       required: true
    },
+   } , {
+   timestamps: true
 });
 
 const playerSchema = new mongoose.Schema({
@@ -50,7 +52,7 @@ const playerSchema = new mongoose.Schema({
          required: true,
       },
       age: {
-         type: Number,
+         type: String,
          required: true,
       },
       agreeCoC: {
@@ -115,7 +117,7 @@ const playerSchema = new mongoose.Schema({
       },
       referrer: {
          type: String,
-         required: true,
+         required: false,
       },
       img: {
          type: String,

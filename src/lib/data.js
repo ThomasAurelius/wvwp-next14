@@ -17,7 +17,7 @@ export const getPosts = async () => {
    try{
       connectToDb(); 
       const posts = await Post.find();
-      return posts
+      return posts;
    }catch(error){
       throw new Error('Failed to fetch Posts');
    }

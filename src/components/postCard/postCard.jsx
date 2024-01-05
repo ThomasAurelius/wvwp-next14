@@ -19,7 +19,7 @@ const PostCard = ({player}) => {
          <span className={styles.date}>01.01.2024</span>
       </div>
       <div className={styles.bottom}>
-         <h1 className={styles.title}>{player.name}</h1>
+         <h1 className={styles.title}>{player?.name}</h1>
          <p className={styles.desc}>Description</p>
          <Link href="/blog/post">Read more</Link>
       </div>
