@@ -10,13 +10,14 @@ const getPlayers = async () => {
     if (!response.ok) {
       throw new Error(response.statusText)
     }
-   
-   return response.json()
-   
-  }
+      return response.json()
+     }
 
 const PlayersPage = async () => {
 
+
+
+  
   //NOT Fetching any data, but data is present and it's connected to the database
   //There are 3 records in the Player collection. So I should be getting 3 records
   
@@ -25,11 +26,11 @@ const PlayersPage = async () => {
   console.log("logging players: " + players)
   return (
     <div className={styles.container}>
-      {players.map((player => (
+      {players.map((player) => (
         <div className={styles.player} key={player._id}>
           <PostCard player={player} />
         </div>
-      )))}
+      ))}
       
     </div>
   )
