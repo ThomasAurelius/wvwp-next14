@@ -1,5 +1,5 @@
 import { connectToDb } from './utils';
-import { Player, User } from './models';
+import { Player, User,  Post } from './models';
 
 
 export const getPlayers = async () => {
@@ -8,9 +8,20 @@ export const getPlayers = async () => {
       const players = await Player.find();
       return players;
    }catch(error){
+      console.log(error);
       throw new Error('Failed to fetch players');
    }
 };
+
+export const getPosts = async () => {  
+   try{
+      connectToDb(); 
+      const posts = await Post.find();
+      return posts
+   }catch(error){
+      throw new Error('Failed to fetch Posts');
+   }
+}
 
 // export const getPlayer = async (id) => {
 //    try{

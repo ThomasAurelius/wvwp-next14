@@ -4,6 +4,7 @@ import styles from './players.module.css'
 import { getPlayers } from '@/lib/data'
 
 
+
 // const getPlayers = async () => {
 //     const response = await fetch('http://localhost:3000/api/players')
 
@@ -21,6 +22,7 @@ const PlayersPage = async () => {
 
   //NOT Fetching any data, but data is present and it's connected to the database
   //There are 3 records in the Player collection. So I should be getting 3 records
+  
   const players = await getPlayers();
   console.log("logging players: " + players)
 

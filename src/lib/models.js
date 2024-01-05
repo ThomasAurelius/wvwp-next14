@@ -28,99 +28,116 @@ const userSchema = new mongoose.Schema({
 
 });
 
+const postSchema = new mongoose.Schema({
+   _id : {
+      type: String,
+      required: true
+   },
+   title: {
+      type: String,
+      required: true,
+      unique: true
+   },
+   description:{
+      type: String,
+      required: true
+   },
+});
+
 const playerSchema = new mongoose.Schema({
       _id: {
          type: ObjectId,
-         required: true
+         required: true,
       },
       age: {
          type: Number,
-         required: true
+         required: true,
       },
       agreeCoC: {
          type: Boolean,
-         required: true
+         required: true,
       },
       street: {
          type: String,
-         required: true
+         required: true,
       },
       city: {
          type: String,
-         required: true
+         required: true,
       },
       state: {
          type: String,
-         required: true
+         required: true,
       },
       zip: {
          type: String,
-         required: true
+         required: true,
       },
       name: {
          type: String,
-         required: true
+         required: true,
       },
       email: {
          type: String,
-         required: true
+         required: true,
       },
       dob: {
          type: Date,
-         required: true
+         required: true,
       },
       gender: {
          type: String,
-         required: true
+         required: true,
       },
       isMaster: {
          type: Boolean,
-         default: false
+         default: false,
       }, 
       phone: {
          type: String,
-         required: true
+         required: true,
       },
       duesPaid: {
          type: Boolean,
-         default: false
+         default: false,
       },
       tournPaid: {
          type: Boolean,
-         default: false
+         default: false,
       },
       usaWPnum: {
          type: String,
-         required: true
+         required: true,
       },
       year: {
          type: String,
-         required: true
+         required: true,
       },
       referrer: {
          type: String,
-         required: true
+         required: true,
       },
       img: {
          type: String,
-         required: false
+         required: false,
       },  
-      userId: {
+      parentUserId: {
          type: String,
-         required: true
+         required: true,
       },
       createdAt: {
          type: Date,
-         required: true
+         required: true,
       },
       updatedAt: {
          type: Date,
-         required: true
+         required: true,
       },
       } , {
-      timestamps: true
+      timestamps: true,
    
    });
 
    export const User = mongoose.models?.User || mongoose.model('User', userSchema);
    export const Player = mongoose.models?.Player || mongoose.model('Player', playerSchema);
+   export const Post = mongoose.models?.Post || mongoose.model('Post', postSchema);
