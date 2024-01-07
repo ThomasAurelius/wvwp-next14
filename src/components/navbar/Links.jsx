@@ -26,21 +26,11 @@ import { handleGithubLogin, handleLogout } from '@/lib/action';
          title: "Contact",
          path: "/contact",
       },
-      {
-         title: "Blog",
-         path: "/blog",
-      },
-
+      
    ];
 
 const Links = ({session}) => {
    const [open, setOpen] = React.useState(false);
-
-
-
-   //temporary
-  
-   // const isAdmin = true
 
   return (
    <div className={styles.container}>
