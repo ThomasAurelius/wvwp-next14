@@ -68,71 +68,75 @@ const playerSchema = new mongoose.Schema({
       
       age: {
          type: String,
-         required: true,
+         
       },
       agreeCoC: {
          type: Boolean,
-         required: true,
+        
       },
-      name: {
+      firstname: {
          type: String,
-         required: true,
+         
+      },
+      lastname: {
+         type: String,
+         
       },
       email: {
          type: String,
-         required: true,
+         
       },
       dob: {
          type: Date,
-         required: true,
+         
       },
       gender: {
          type: String,
-         required: true,
+         
       },
       isMaster: {
          type: Boolean,
-         default: false,
+        
       }, 
       phone: {
          type: String,
-         required: true,
+         
       },
       duesPaid: {
          type: Boolean,
-         default: false,
+         
       },
       tournPaid: {
          type: Boolean,
-         default: false,
+         
       },
       usaWPnum: {
          type: String,
-         required: true,
+      
       },
       year: {
          type: String,
-         required: true,
+         
       },
       referrer: {
          type: String,
-         required: false,
+         
       },
       img: {
          type: String,
-         required: false,
+         
       },  
       parentUserId: {
          type: String,
-         required: true,
+         
       },
       createdAt: {
          type: Date,
-         required: true,
+         
       },
       updatedAt: {
          type: Date,
-         required: true,
+         
       },
       } , {
       timestamps: true,

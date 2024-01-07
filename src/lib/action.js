@@ -161,10 +161,10 @@ export const deletePost = async (formData) => {
 };
 
 
-export const addPlayer = async (parentUserId, formData) => {
+export const addPlayer = async (prevState, formData) => {
   
 
-  const { firstname, lastname, phone, email, usaWPnum, referrer, year } = Object.fromEntries(formData);
+  const { firstname, lastname, phone, email, age, gender, usaWPnum, referrer, year, parentUserId } = Object.fromEntries(formData);
 
   try {
     connectToDb();
@@ -173,6 +173,8 @@ export const addPlayer = async (parentUserId, formData) => {
       lastname,
       phone,
       email,
+      age,
+      gender,
       usaWPnum,
       referrer,
       year,
