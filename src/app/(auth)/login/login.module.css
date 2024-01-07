@@ -1,0 +1,43 @@
+.form {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   gap: 30px;
+}
+
+.wrapper {
+   width: 500px;
+   margin: 0 auto;
+   background-color: var(--bgSoft);
+   padding: 50px;
+   border-radius: 5px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   gap: 30px;
+}
+
+.form input {
+   padding: 20px;
+   background-color: var(--bg);
+   color: var(--textColor);
+   border: none;
+   border-radius: 5px;
+}
+
+.form button {
+   padding: 20px;
+   cursor: pointer;
+   background-color: var(--btn);
+   color: var(--textColor);
+   border: none;
+   border-radius: 5px;
+   font-weight: bold;
+}
+
+.github {
+   width: 100%;
+   padding: 20px;
+   cursor: pointer;
+}

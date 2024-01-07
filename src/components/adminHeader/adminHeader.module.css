@@ -1,0 +1,15 @@
+.container {
+   display: flex;
+   justify-content: center;
+}
+
+.adminNavbar {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 100%;
+   height: 5vh;
+   background-color: var(--bgSoft);
+   border-bottom: 1px solid #e5e5e5;
+   
+}

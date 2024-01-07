@@ -6,25 +6,47 @@ import Link from 'next/link'
 
 const PostCard = ({player}) => {
   console.log("postcard player: " + player)
+  
   return (
+    <Link href={`/players/${player._id}`}>
     <div className={styles.container}>
+    
       <div className={styles.top}>
-         <div className={styles.imgContainer}>
-         {player.img && <Image className={styles.img} src={player.img} alt={player.name} width={200} height={250} />
-  }
+         
+         <div className={styles.topLeft}>
+          <h1 className={styles.title}>{player.firstname} {player.lastname}</h1>
+         
+          
          </div>
          <div className={styles.topRight}>
-         
+          <p className={styles.desc}>{player.gender}</p>
+          <p className={styles.desc}>{player.year}</p>
          </div>
-         <span className={styles.date}>01.01.2024</span>
+         <div className={styles.imgContainer}>
+         {player.img && <Image className={styles.img} src={player.img} alt={player.name} width={90} height={90} />
+         }
+         </div>
+         
       </div>
       <div className={styles.bottom}>
-         <h1 className={styles.title}>{player?.name}</h1>
-         <p className={styles.desc}>Description</p>
-         <Link href="/blog/post">Read more</Link>
+        <div className={styles.bottomLeft}>
+          <p className={styles.desc}>AgreeCoC: <input type="checkbox" checked={player.agreeCoC}/></p>
+          <p className={styles.desc}>Master: <input type="checkbox" checked={player.isMaster}/></p>
+          
+        </div>
+        <div className={styles.bottomRight}>
+          <p className={styles.desc}>Dues paid: <input type="checkbox" checked={player.duesPaid}/></p>
+          <p className={styles.desc}>Tourn paid: <input type="checkbox" checked={player.tournPaid}/></p>
+        </div>
+        <div>
+          <p className={styles.desc}>{player._id}</p>
+          
+        </div>
       </div>
+      
     
     </div>
+    </Link>
   )
 }
 

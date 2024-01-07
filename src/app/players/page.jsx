@@ -2,16 +2,17 @@
 import PostCard from '@/components/postCard/postCard'
 import React from 'react'
 import styles from './players.module.css'
+import { getPlayers } from '@/lib/data'
 
 
 
-const getPlayers = async () => {
-    const response = await fetch('http://localhost:3000/api/players', {next:{revalidate:3600}})
-    if (!response.ok) {
-      throw new Error(response.statusText)
-    }
-      return response.json()
-     }
+// const getPlayers = async () => {
+//     const response = await fetch('http://localhost:3000/api/players', {next:{revalidate:3600}})
+//     if (!response.ok) {
+//       throw new Error(response.statusText)
+//     }
+//       return response.json()
+//      }
 
 const PlayersPage = async () => {
 

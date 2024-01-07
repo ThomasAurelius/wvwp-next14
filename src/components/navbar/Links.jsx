@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './navbar.module.css'
 import Link from 'next/link';
 import NavLink from './links/navLink/navLink';
+import { handleGithubLogin, handleLogout } from '@/lib/action';
 
    const links= [ 
       {
@@ -12,6 +13,10 @@ import NavLink from './links/navLink/navLink';
       {
          title: "About",
          path: "/about",
+      },
+      {
+         title: "Parents",
+         path: "/parent",
       },
       {
          title: "Players",
@@ -28,14 +33,14 @@ import NavLink from './links/navLink/navLink';
 
    ];
 
-const Links = () => {
+const Links = ({session}) => {
    const [open, setOpen] = React.useState(false);
 
 
 
    //temporary
-   const session = true
-   const isAdmin = true
+  
+   // const isAdmin = true
 
   return (
    <div className={styles.container}>
@@ -43,10 +48,12 @@ const Links = () => {
       {links.map((link=>(
          <NavLink item={link} key={link.title}/>
       )))} 
-      { session ? (
+      { session?.user ? (
       <>
-      {isAdmin && <NavLink item={{ title: "Admin" , path: "/admin" }}/>}
+      {session.user?.isAdmin && <NavLink item={{ title: "Admin" , path: "/admin" }}/>}
+      <form action={handleLogout}>
       <button className={styles.logout}>Logout</button>
+      </form>
       </>
     ) : (
       <Link href="/login">
@@ -60,10 +67,14 @@ const Links = () => {
       {links.map((link=>(
          <NavLink item={link} key={link.title}/>
       )))} 
-      { session ? (
+      { session?.user ? (
       <>
-      {isAdmin && <NavLink item={{ title: "Admin" , path: "/admin" }}/>}
-      <button className={styles.logout}>Logout</button>
+      {session.user?.isAdmin && <NavLink item={{ title: "Admin" , path: "/admin" }}/>}
+      <form action={handleLogout}>
+      
+      
+         <button className={styles.logout}>Logout</button>
+      </form>
       </>
     ) : (
       <Link href="/login">

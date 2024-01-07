@@ -1,38 +1,56 @@
-import { ObjectId } from 'mongodb';
+
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-   _id : {
-      type: String,
-      required: true
-   },
+   
    email: {
-      type: String,
-      required: true,
+      type: String,   
       unique: true
    },
-   name:{
+   firstname:{
       type: String,
-      required: true
+      
+   },
+   lastname:{
+      type: String,
+   },
+   phone:{
+      type: String,
+   },
+   street :{
+      type: String,
+   },
+   city:{
+      type: String,
+   },
+   state:{
+      type: String,
+   },
+   zip:{
+      type: String,
    },
    password:{
       type: String,
-      required: true
+      
+   },
+   image:{
+      type: String,
    },
    isAdmin: {
       type: Boolean,
       default: false
    },
+   players: {
+      type: Array,
+      default: []
+   }
    } , {
    timestamps: true
 
 });
 
 const postSchema = new mongoose.Schema({
-   _id : {
-      type: String,
-      required: true
-   },
+  
    title: {
       type: String,
       required: true,
@@ -47,32 +65,13 @@ const postSchema = new mongoose.Schema({
 });
 
 const playerSchema = new mongoose.Schema({
-      _id: {
-         type: ObjectId,
-         required: true,
-      },
+      
       age: {
          type: String,
          required: true,
       },
       agreeCoC: {
          type: Boolean,
-         required: true,
-      },
-      street: {
-         type: String,
-         required: true,
-      },
-      city: {
-         type: String,
-         required: true,
-      },
-      state: {
-         type: String,
-         required: true,
-      },
-      zip: {
-         type: String,
          required: true,
       },
       name: {
@@ -140,6 +139,6 @@ const playerSchema = new mongoose.Schema({
    
    });
 
-   export const User = mongoose.models?.User || mongoose.model('User', userSchema);
-   export const Player = mongoose.models?.Player || mongoose.model('Player', playerSchema);
-   export const Post = mongoose.models?.Post || mongoose.model('Post', postSchema);
+   export const User = mongoose.models?.users || mongoose.model('users', userSchema);
+   export const Player = mongoose.models?.players || mongoose.model('players', playerSchema);
+   export const Post = mongoose.models?.posts || mongoose.model('posts', postSchema);
