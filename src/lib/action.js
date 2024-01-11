@@ -18,7 +18,7 @@ export const handleGithubLogin = async () => {
   };
 
   export const register = async (previousState, formData) => {
-    const { firstname, lastname, street, city, state, zip, phone, email, password, confirmPassword, image } = Object.fromEntries(formData);
+    const { firstname, lastname, street, city, state, zip, phone, email, password, confirmPassword } = Object.fromEntries(formData);
 
     if (password !== confirmPassword) {
       return { error: "Passwords don't match" };
@@ -46,7 +46,7 @@ export const handleGithubLogin = async () => {
         state,
         zip,
         password: hashedPassword,
-        image,
+        
       });
       await newUser.save();
       console.log('saved to db');
@@ -74,7 +74,7 @@ export const handleGithubLogin = async () => {
   }
 
   export const addUser = async (prevState,formData) => {
-  const { firstname, lastname, phone, email, street, city, state, zip, password, image } = Object.fromEntries(formData);
+  const { firstname, lastname, phone, email, street, city, state, zip, password } = Object.fromEntries(formData);
 
   try {
     connectToDb();
@@ -88,7 +88,7 @@ export const handleGithubLogin = async () => {
       state,
       zip,
       password,
-      image,
+      
     });
 
     await newUser.save();
@@ -220,6 +220,23 @@ export const updatePlayer = async (prevState, formData) => {
     // await updatePlayer.save();
     console.log("saved to db");
     revalidatePath("/blog");
+    revalidatePath("/admin");
+  } catch (err) {
+    console.log(err);
+    return { error: "Something went wrong!" };
+  }
+};
+
+
+export const deletePlayer = async (formData) => {
+  const { _id } = Object.fromEntries(formData);
+  
+  try {
+    connectToDb();
+
+    console.log("id: " + _id);
+    await Player.findByIdAndDelete(_id);
+    console.log("deleted from db");
     revalidatePath("/admin");
   } catch (err) {
     console.log(err);

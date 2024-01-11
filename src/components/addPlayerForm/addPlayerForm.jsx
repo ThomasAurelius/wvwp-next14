@@ -35,7 +35,7 @@ const AddPlayerForm = ({session}) => {
           <input type="text" placeholder="Player Year" name="year"/>
           <input type="hidden" name="parentUserId" value={session.session.user.id} />
           <p>Read and agreed to WVWP Code of Conduct, Policies and Substance Abuse Policy?</p>
-          <select name="teamId">
+          <select name="agreeCoC">
             <option value="false">Read and Agree?</option>
             <option value="true">Yes</option>
             <option value="false">No</option>
