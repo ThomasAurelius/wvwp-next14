@@ -4,25 +4,18 @@
    justify-content: center;
    gap: 20px;
    margin: 0 auto;
-   
+   background-color: var(--bgSoft);
+   border-radius: 10px;
+   margin-bottom: 20px;
 }
 
-
+.topLeft {
+   width: 30vw;
+}
 
 .top, .bottom {
    display: flex;
    gap: 20px;
-}
-
-.imgContainer {
-   max-width: 90%;
-   height: 100px;
-   position: relative;
-}
-
-.img{
-   object-fit: cover;
-   
 }
 
 .date {

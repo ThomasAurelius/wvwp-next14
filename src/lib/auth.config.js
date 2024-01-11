@@ -21,12 +21,22 @@ export const authConfig = {
          const isOnAdminPanel = request?.nextUrl?.pathname.includes('/admin');
          const isOnBlogPage = request?.nextUrl?.pathname.includes('/blog');
          const isOnLoginPage = request?.nextUrl?.pathname.includes('/login');
+         const isOnPlayersPage = request?.nextUrl?.pathname.includes('/players');
+         const isOnParentPage = request?.nextUrl?.pathname.includes('/parent');
 //restrict access to admin panel
          if (isOnAdminPanel && !user?.isAdmin) {
             return false;
          }
+//restrict access to players page
+         if (isOnPlayersPage && !user?.isAdmin) {
+            return false;
+         }
 //restrict access to blog page
          if (isOnBlogPage && !user) {
+            return false;
+         }
+//restrict access to parent page
+         if (isOnParentPage && !user) {
             return false;
          }
 //redirect authenticated users to home page if they try to access login page

@@ -163,7 +163,6 @@ export const deletePost = async (formData) => {
 
 export const addPlayer = async (prevState, formData) => {
   
-
   const { firstname, lastname, phone, email, age, gender, usaWPnum, referrer, year, parentUserId } = Object.fromEntries(formData);
 
   try {
@@ -182,6 +181,43 @@ export const addPlayer = async (prevState, formData) => {
     });
 
     await newPlayer.save();
+    console.log("saved to db");
+    revalidatePath("/blog");
+    revalidatePath("/admin");
+  } catch (err) {
+    console.log(err);
+    return { error: "Something went wrong!" };
+  }
+};
+
+
+export const updatePlayer = async (prevState, formData) => {
+  
+  const {_id, firstname, lastname, usaWPnum, email, phone, dob, age, year, gender, referrer,  isMaster, duesPaid, tournPaid, agreeCoc } = Object.fromEntries(formData);
+
+  try {
+    connectToDb();
+    Player.findByIdAndUpdate(_id, {
+      _id,
+      firstname,
+      lastname,
+      usaWPnum,
+      phone,
+      email,
+      dob,
+      age,
+      year,
+      gender,
+      referrer,
+      isMaster,
+      duesPaid,
+      tournPaid,
+      agreeCoc,
+     
+
+    });
+
+    // await updatePlayer.save();
     console.log("saved to db");
     revalidatePath("/blog");
     revalidatePath("/admin");

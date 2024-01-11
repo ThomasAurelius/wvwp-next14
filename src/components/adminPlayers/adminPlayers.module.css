@@ -1,0 +1,11 @@
+.container {
+   
+}
+
+.deleteForm {
+   display: inline;
+}
+
+.detail {
+   display: flex;
+}

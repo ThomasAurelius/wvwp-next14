@@ -1,0 +1,22 @@
+.container {
+   width: 100%;
+   background-color: var(--bgSoft);
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+   gap: 30px;
+   margin: 0 auto;
+}
+
+.footer {
+   width: 100%;
+   background-color: var(--bgSoft);
+   margin: 0 auto;
+   text-align: center;
+  
+   
+}
+
+.link {
+   cursor: pointer;
+}

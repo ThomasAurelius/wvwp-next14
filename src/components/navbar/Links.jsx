@@ -15,12 +15,16 @@ import { handleGithubLogin, handleLogout } from '@/lib/action';
          path: "/about",
       },
       {
-         title: "Parents",
-         path: "/parent",
+         title: "Calendar",
+         path: "/calendar",
       },
       {
-         title: "Players",
-         path: "/players",
+         title: "Links",
+         path: "/links",
+      },
+      {
+         title: "Parents",
+         path: "/parent",
       },
       {
          title: "Contact",
@@ -38,13 +42,20 @@ const Links = ({session}) => {
       {links.map((link=>(
          <NavLink item={link} key={link.title}/>
       )))} 
+
+      
+      {session?.user?.isAdmin &&  
+            <>
+               <NavLink item={{ title: "Players" , path: "/players" }}/>
+               <NavLink item={{ title: "Admin" , path: "/admin" }}/>
+            </>
+      }
       { session?.user ? (
-      <>
-      {session.user?.isAdmin && <NavLink item={{ title: "Admin" , path: "/admin" }}/>}
-      <form action={handleLogout}>
-      <button className={styles.logout}>Logout</button>
+      
+      <form style={{display: "inline"}} action={handleLogout}>
+         <button className={styles.logout}>Logout</button>
       </form>
-      </>
+      
     ) : (
       <Link href="/login">
         Login
@@ -59,10 +70,11 @@ const Links = ({session}) => {
       )))} 
       { session?.user ? (
       <>
-      {session.user?.isAdmin && <NavLink item={{ title: "Admin" , path: "/admin" }}/>}
-      <form action={handleLogout}>
-      
-      
+      {session.user?.isAdmin && <>
+         <NavLink item={{ title: "Players", path:"/players"}}/>
+         <NavLink item={{ title: "Admin" , path: "/admin" }}/>
+         </>}
+      <form action={handleLogout}>      
          <button className={styles.logout}>Logout</button>
       </form>
       </>

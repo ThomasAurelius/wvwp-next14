@@ -17,9 +17,11 @@ const UsersAdmin = async () => {
             <AdminUsers />
           </Suspense>
         </div>
-        <div className={styles.col}>
+        
+        {/*<div className={styles.col}>
           <AdminUserForm userId={session.user.id}/>
         </div>
+      */}
       </div>
     </div>
   )

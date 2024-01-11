@@ -13,7 +13,7 @@ const Navbar = async () => {
     <div className={styles.container}>
       <div className={styles.navbarItems}>
       <div className={styles.logo}>
-      <Image src="/logo.png" width={85} height={85} alt="logo" />
+      <Image src="/WVAquaticslogo.jpg" width={85} height={85} alt="logo" />
       </div>
       <Links session={session} />
       </div>

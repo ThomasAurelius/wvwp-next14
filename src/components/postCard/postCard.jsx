@@ -5,8 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const PostCard = ({player}) => {
-  console.log("postcard player: " + player)
-  
+ 
   return (
     <Link href={`/players/${player._id}`}>
     <div className={styles.container}>
@@ -23,25 +22,25 @@ const PostCard = ({player}) => {
           <p className={styles.desc}>{player.year}</p>
          </div>
          <div className={styles.imgContainer}>
-         {player.img && <Image className={styles.img} src={player.img} alt={player.name} width={90} height={90} />
-         }
+         
+         
          </div>
          
       </div>
       <div className={styles.bottom}>
         <div className={styles.bottomLeft}>
-          <p className={styles.desc}>AgreeCoC: <input type="checkbox" checked={player.agreeCoC}/></p>
-          <p className={styles.desc}>Master: <input type="checkbox" checked={player.isMaster}/></p>
+          <p className={styles.desc}>AgreeCoC: <input type="checkbox" readOnly checked={player.agreeCoC}/></p>
+          <p className={styles.desc}>Master: <input type="checkbox" readOnly checked={player.isMaster}/></p>
           
         </div>
         <div className={styles.bottomRight}>
-          <p className={styles.desc}>Dues paid: <input type="checkbox" checked={player.duesPaid}/></p>
-          <p className={styles.desc}>Tourn paid: <input type="checkbox" checked={player.tournPaid}/></p>
+          <p className={styles.desc}>Dues paid: <input type="checkbox" readOnly checked={player.duesPaid}/></p>
+          <p className={styles.desc}>Tourn paid: <input type="checkbox" readOnly checked={player.tournPaid}/></p>
         </div>
-        <div>
+        {/*<div>
           <p className={styles.desc}>{player._id}</p>
-          
         </div>
+      */}
       </div>
       
     

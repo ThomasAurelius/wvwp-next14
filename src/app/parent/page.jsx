@@ -8,13 +8,17 @@ import { auth } from '@/lib/auth'
 const ParentPage = async () => {
 
   const session = await auth();
+  const user = session.user;
    const players = await getPlayers();
-   //const playersOfParent = players.filter(player => player.parentId === {user.id})
+   const playersOfparent = players.filter(player => player.parentUserId == user?.id)
 
-
-  return (
+  return (    
     <div className={styles.container}>
-      
+      <h1>Player Details</h1>
+      { playersOfparent.map((player) => (
+       <PostCard key={player.id} player={player} />
+        ))
+      }
       <AddPlayerForm session={{session}} />
     </div>
   )
@@ -22,4 +26,3 @@ const ParentPage = async () => {
 
 export default ParentPage
 
-//filter players that have the parents id
