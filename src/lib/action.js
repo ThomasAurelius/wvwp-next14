@@ -184,6 +184,7 @@ export const addPlayer = async (prevState, formData) => {
     console.log("saved to db");
     revalidatePath("/blog");
     revalidatePath("/admin");
+    revalidatePath("/parent");
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
@@ -193,11 +194,11 @@ export const addPlayer = async (prevState, formData) => {
 
 export const updatePlayer = async (prevState, formData) => {
   
-  const {_id, firstname, lastname, usaWPnum, email, phone, dob, age, year, gender, referrer,  isMaster, duesPaid, tournPaid, agreeCoc } = Object.fromEntries(formData);
+  const { _id, firstname, lastname, usaWPnum, email, phone, dob, age, year, gender, referrer,  isMaster, duesPaid, tournPaid, agreeCoC } = Object.fromEntries(formData);
 
   try {
     connectToDb();
-    Player.findByIdAndUpdate(_id, {
+    await Player.findByIdAndUpdate(_id, {
       _id,
       firstname,
       lastname,
@@ -212,15 +213,16 @@ export const updatePlayer = async (prevState, formData) => {
       isMaster,
       duesPaid,
       tournPaid,
-      agreeCoc,
+      agreeCoC,
      
 
     });
 
-    // await updatePlayer.save();
-    console.log("saved to db");
-    revalidatePath("/blog");
+    //  await Player.save();
+    console.log("updated to db");
     revalidatePath("/admin");
+    revalidatePath("/parent");
+    revalidatePath(`/players/${_id}`);
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
@@ -228,18 +230,20 @@ export const updatePlayer = async (prevState, formData) => {
 };
 
 
-export const deletePlayer = async (formData) => {
+export const deletePlayerOld = async (formData) => {
   const { _id } = Object.fromEntries(formData);
-  
+  console.log("id: " + _id)
   try {
     connectToDb();
 
     console.log("id: " + _id);
     await Player.findByIdAndDelete(_id);
     console.log("deleted from db");
-    revalidatePath("/admin");
+    
+    revalidatePath("/players");
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
   }
 };
+

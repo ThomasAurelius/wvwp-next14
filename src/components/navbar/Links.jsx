@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './navbar.module.css'
 import Link from 'next/link';
 import NavLink from './links/navLink/navLink';
-import { handleGithubLogin, handleLogout } from '@/lib/action';
+import { handleLogout } from '@/lib/action';
 
    const links= [ 
       {

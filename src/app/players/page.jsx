@@ -24,7 +24,7 @@ const PlayersPage = async () => {
   
   const players = await getPlayers();
 
-  console.log("logging players: " + players)
+  
   return (
     <div className={styles.container}>
       {players.map((player) => (
@@ -38,3 +38,5 @@ const PlayersPage = async () => {
 }
 
 export default PlayersPage
+
+//playerId={player._id} playerFirst={player.firstname} playerLast={player.lastname} playerusaWPnum={player.usaWPnum} playerEmail={player.email} playerPhone={player.phone} playerDob={player.dob} playerAge={player.age} playerYear={player.year} playerGender={player.gender} playerReferred={player.referred} playerIsMaster={player.isMaster} playerDuesPaid={player.duesPaid} playerTournPaid={player.tournPaid} playerAgreeCoC={player.agreeCoc} playerUpdatedAt={player.updatedAt}

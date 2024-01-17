@@ -1,7 +1,6 @@
 
 import styles from './postCard.module.css'
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const PostCard = ({player}) => {

@@ -1,4 +1,5 @@
 const { default: mongoose } = require("mongoose");
+import { connect } from "mongoose";
 const dotenv = require("dotenv");
 
 const connection = {};
