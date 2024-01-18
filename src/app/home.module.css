@@ -39,3 +39,26 @@
       font-weight: 700;
       color: var(--text);
 }
+
+
+
+@media (max-width: 1024px) {
+      .container {
+            flex-direction: column;
+            height: 100%;
+      }
+}
+
+@media (max-width: 768px) {
+      .container {
+            flex-direction: column;
+            height: 100%;
+      }
+}
+
+@media (max-width: 640px) {
+      .container {
+            flex-direction: column;
+            height: 100%;
+      }
+}
