@@ -2,16 +2,12 @@
 import React from 'react'
 import { getUsers } from '@/lib/data'
 import styles from './adminUsers.module.css'
-import { deleteUser } from '@/lib/action'
 import UserCard from '../userCard/page'
-import { useFormState } from 'react-dom'
 import DeleteUser from '../deleteUser/deleteUser'
 
 
 const AdminUsers = async () => {
-  const [state, formAction] = useFormState({
-    deleteUser, undefined
-  })
+ 
   const users = await getUsers()
 
   return (
