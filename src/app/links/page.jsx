@@ -11,6 +11,12 @@ const links = () => {
                <p>List of regional pools used by WVWP</p>
             </Link>
          </div>
+         <div className={styles.link}>
+            <Link href="/links/sponsors">
+               <h1>Sponsors</h1>
+               <p>Community Sponsors of WVWP</p>
+            </Link>
+         </div>
        
          <div className={styles.link}>
             <Link href="https://webpoint.usawaterpolo.com/wp15/Intralock/Login.wp">
