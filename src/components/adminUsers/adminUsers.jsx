@@ -1,9 +1,11 @@
+
 import React from 'react'
 import { getUsers } from '@/lib/data'
 import styles from './adminUsers.module.css'
 import { deleteUser } from '@/lib/action'
 import UserCard from '../userCard/page'
 import { useFormState } from 'react-dom'
+import DeleteUser from '../deleteUser/deleteUser'
 
 
 const AdminUsers = async () => {
@@ -21,10 +23,7 @@ const AdminUsers = async () => {
           
             <UserCard user={user} />
             </div>
-            <form action={formAction}>
-               {/* <input type="hidden" name="id" value={user.id} /> */}
-               <button type="submit" className={styles.deleteButton}>Delete</button>
-            </form>
+            <DeleteUser user={user} />
         </div>
       ))}
     </div>
