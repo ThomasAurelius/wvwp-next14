@@ -6,8 +6,10 @@ import { useFormState } from 'react-dom'
 import { connectToDb } from '@/lib/utils'
 import { Player } from '@/lib/models'
 import { revalidatePath } from "next/cache";
-
+import { connect } from 'mongoose'
 import { useParams } from 'next/navigation'
+
+import  DeletePlayer  from '../deletePlayer/deletePlayer'
 
 
 
@@ -15,7 +17,7 @@ const EditPlayerForm = ({player}) => {
   const [state, formAction] = useFormState(
 updatePlayer, undefined
   )
-const params = useParams();
+  const params = useParams();
 
   const [playerState, setPlayerState] = useState(player)
 
@@ -29,22 +31,22 @@ const params = useParams();
   }
 
 
-const deletePlayer = async (params) => {
-  const id = params.id;
-  console.log("id: " + id)
-  try {
-    connectToDb();
+// const deletePlayer = async (params) => {
+//   const id = params.id;
+//   console.log("id: " + id)
+//   try {
+//     connectToDb();
 
-    console.log("id: " + id);
-    await Player.findByIdAndDelete(id);
-    console.log("deleted from db");
+//     console.log("id: " + id);
+//     await Player.findByIdAndDelete(id);
+//     console.log("deleted from db");
     
-    revalidatePath("/players");
-  } catch (err) {
-    console.log(err);
-    return { error: "Something went wrong!" };
-  }
-};
+//     revalidatePath("/players");
+//   } catch (err) {
+//     console.log(err);
+//     return { error: "Something went wrong!" };
+//   }
+// };
   
     //const lastUpdated = player.updatedAt.toString()
    
@@ -54,7 +56,7 @@ const deletePlayer = async (params) => {
     <div className={styles.container}>
       <form action={formAction}>
            <h1 className='mb-3 text-2xl font-semibold tracking-tight'>Edit Player Details</h1> 
-           <input onChange={handleChange} type="text" name="_id" value={player._id} />
+           <input onChange={handleChange} type="hidden" name="_id" value={player._id} />
             <div>
               <label htmlFor="firstname">Player First Name: </label>
               <input onChange={handleChange} name="firstname" type="text" className="form-control" id="firstname" value={playerState.firstname} />
@@ -77,7 +79,7 @@ const deletePlayer = async (params) => {
             </div>
             <div>
               <label htmlFor="dob">Date of Birth: </label>
-              <input onChange={handleChange} type="text" name="dob" id="dob" value={playerState.dob.toString()} />
+              <input onChange={handleChange} type="text" name="dob" id="dob" value={playerState.dob?.toString()} />
             </div>
             <div>
               <label htmlFor="age">Age: </label>
@@ -133,9 +135,10 @@ const deletePlayer = async (params) => {
 {/*             look up player's user (Parent/gaurdian etc) details, link to their user profile. */}
         
             <button onSubmit={updatePlayer} className="my-2 bg-blue-300 border-black">Update Player</button> <br></br>
-            <button onClick={deletePlayer} className="my-2 bg-blue-300 border-black">Delete Player</button>
+          
             
         </form>
+         <DeletePlayer player={player} />
     </div>
   )
 }

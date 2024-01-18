@@ -62,7 +62,7 @@ export const { handlers:{GET, POST}, auth, signIn, signOut } = NextAuth({
                   const newUser = new User({
                      username: profile.name,
                      email: profile.email,
-                     image: profile.avatar_url,
+                    
                      
                   });
                   await newUser.save();

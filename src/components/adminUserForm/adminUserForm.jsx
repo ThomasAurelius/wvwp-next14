@@ -4,7 +4,7 @@ import styles from './adminUserForm.module.css'
 import { useFormState } from 'react-dom'
 import { addUser } from '@/lib/action'
 
-const AdminUserForm = (userId) => {
+const AdminUserForm = () => {
   const [state, formAction] = useFormState({
 addUser, undefined
   })
@@ -14,7 +14,7 @@ addUser, undefined
       <div className={styles.wrapper}>
         <form className={styles.form} action={formAction}>
           <h1>Add new User</h1>
-          <input type="hidden" name="userId" value={userId} />
+          
           <input type="text" name="username" placeholder="username" />
           <input type="text" name="email" placeholder="email" />
           <input type="text" name="password" placeholder="password" />

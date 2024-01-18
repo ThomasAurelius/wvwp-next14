@@ -230,13 +230,14 @@ export const updatePlayer = async (prevState, formData) => {
 };
 
 
-export const deletePlayerOld = async (formData) => {
+export const deletePlayer = async (prevState, formData) => {
+  console.log("FormData :" + formData)
   const { _id } = Object.fromEntries(formData);
-  console.log("id: " + _id)
+  console.log("_id: " + _id)
   try {
     connectToDb();
 
-    console.log("id: " + _id);
+    console.log("_id: " + _id);
     await Player.findByIdAndDelete(_id);
     console.log("deleted from db");
     
