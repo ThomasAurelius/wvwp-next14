@@ -4,6 +4,7 @@ import AddPlayerForm from '@/components/addPlayerForm/addPlayerForm'
 import { getPlayers } from '@/lib/data'
 import PostCard from '@/components/postCard/postCard'
 import { auth } from '@/lib/auth'
+import Link from 'next/link'
 
 const ParentPage = async () => {
 
@@ -16,8 +17,15 @@ const ParentPage = async () => {
     <div className={styles.container}>
       <h1>Player Details</h1>
       { playersOfparent.map((player) => (
-       <PostCard key={player.id} player={player} />
-        ))
+         (session.isAdmin) ? ( 
+          <Link key={player.id} href={`/players/${player._id}`}>
+            <PostCard key={player.id} player={player} />
+          </Link>
+            ) : (
+          <PostCard key={player.id} player={player} />
+            )
+          
+            ))
       }
       <AddPlayerForm session={{session}} />
     </div>

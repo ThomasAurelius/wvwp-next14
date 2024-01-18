@@ -24,6 +24,24 @@ const links = () => {
                <p>Governing Body for Usa Water Polo teams</p>
             </Link>
          </div>
+         <div className={styles.link}>
+            <Link href="/policies/WVWPCoC">
+               <h1>Code of Conduct Policy</h1>
+               <p>Official Code of Conduct Policy for WVWP</p>
+            </Link>
+         </div>
+         <div className={styles.link}>
+            <Link href="/policies/substance">
+               <h1>Substance Abuse Policy</h1>
+               <p>Official Abuse Policy for WVWP</p>
+            </Link>
+         </div>
+         <div className={styles.link}>
+            <Link href="/policies/policy">
+               <h1>WVWP Policies</h1>
+               <p>Official Policies for WVWP</p>
+            </Link>
+         </div>
       </div>
     </div>
   )

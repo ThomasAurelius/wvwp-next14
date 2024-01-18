@@ -1,9 +1,11 @@
 'use client'
 import styles from './addPlayerForm.module.css'
 import {addPlayer} from '../../lib/action'
-import {useFormState} from 'react-dom'
+import {useFormState, useFormStatus} from 'react-dom'
 import {useEffect} from 'react'
 import {useRouter} from 'next/navigation'
+
+import Link from 'next/link'
 
 
 const AddPlayerForm = ({session}) => {
@@ -11,6 +13,8 @@ const AddPlayerForm = ({session}) => {
   const router = useRouter();
   const [state, formAction] = useFormState(addPlayer, undefined)
 
+  const formData = state
+  console.log(formData)
   useEffect(() => {
        (state?.success) && router.push('/parent') 
     }, state?.success, router)
@@ -34,14 +38,15 @@ const AddPlayerForm = ({session}) => {
           <input type="text" placeholder="Referred by" name="referrer"/>
           <input type="text" required placeholder="Player School Year" name="year"/>
           <input type="hidden" name="parentUserId" value={session.session.user.id} />
-          <p>Read and agreed to WVWP Code of Conduct, Policies and Substance Abuse Policy?</p>
+          <p>Read and agreed to <Link className={styles.link} href="/policies/WVWPCoC" target="_blank">WVWP Code of Conduct</Link>, <Link className={styles.link} href="/policies/policy" target="_blank">Policies</Link> and <Link className={styles.link} href="/policies/substance" target="_blank" >Substance Abuse Policy</Link>?</p>
           <select required name="agreeCoC">
             <option value="false">Read and Agree?</option>
             <option value="true">Yes</option>
             <option value="false">No</option>
           </select>
           
-          <button>Add Player</button>
+          <button onSubmit={addPlayer}>Add Player</button>
+         
         </form>
       </div>
     </div>

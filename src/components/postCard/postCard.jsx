@@ -6,23 +6,15 @@ import Link from 'next/link'
 const PostCard = ({player}) => {
  
   return (
-    <Link href={`/players/${player._id}`}>
-    <div className={styles.container}>
     
-      <div className={styles.top}>
-         
-         <div className={styles.topLeft}>
+    <div className={styles.container}>
+        <div className={styles.top}>
+          <div className={styles.topLeft}>
           <h1 className={styles.title}>{player.firstname} {player.lastname}</h1>
-         
-          
          </div>
          <div className={styles.topRight}>
           <p className={styles.desc}>{player.gender}</p>
           <p className={styles.desc}>{player.year}</p>
-         </div>
-         <div className={styles.imgContainer}>
-         
-         
          </div>
          
       </div>
@@ -44,7 +36,7 @@ const PostCard = ({player}) => {
       
     
     </div>
-    </Link>
+    
   )
 }
 

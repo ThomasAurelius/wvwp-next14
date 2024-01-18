@@ -46,3 +46,14 @@
    border-radius: 5px;
    font-weight: bold;
 }
+
+.download {
+   cursor: pointer;
+}
+
+.link {
+   color: var(--textColor);
+   text-decoration: underline;
+   cursor: pointer;
+   color: blue;
+}

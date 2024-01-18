@@ -27,7 +27,7 @@ const Home = () => {
       </div>
     </div>
     <div className={styles.imageContainer}>
-    <Image src="/WVAquaticslogo.jpg" alt="WVWP logo" width={400} height={400} />
+    <Image src="/B_Willamette Valley Aquatics-02.png" alt="WVWP logo" width={400} height={400} />
     
     </div>
   </div>
