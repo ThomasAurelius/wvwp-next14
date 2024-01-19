@@ -8,20 +8,26 @@ import { Player } from '@/lib/models'
 import { revalidatePath } from "next/cache";
 import { connect } from 'mongoose'
 import { useParams } from 'next/navigation'
-
+import { useEffect } from 'react'
+import router from 'next/router'
 import  DeletePlayer  from '../deletePlayer/deletePlayer'
 
 
 
 const EditPlayerForm = ({player}) => {
+
   const [state, formAction] = useFormState(
 updatePlayer, undefined
   )
+
+  useEffect(() => {
+       (state?.success) && router.push('/players') 
+    }, state?.success, router)
+
   const params = useParams();
 
   const [playerState, setPlayerState] = useState(player)
 
-  
 
    function handleChange(event) {
     let value = event.target.value;
@@ -31,22 +37,7 @@ updatePlayer, undefined
   }
 
 
-// const deletePlayer = async (params) => {
-//   const id = params.id;
-//   console.log("id: " + id)
-//   try {
-//     connectToDb();
 
-//     console.log("id: " + id);
-//     await Player.findByIdAndDelete(id);
-//     console.log("deleted from db");
-    
-//     revalidatePath("/players");
-//   } catch (err) {
-//     console.log(err);
-//     return { error: "Something went wrong!" };
-//   }
-// };
   
     //const lastUpdated = player.updatedAt.toString()
    
@@ -197,3 +188,20 @@ export default EditPlayerForm
               <label htmlFor="agreeCoC" className="form-check-label">Agreed to Code Of Conduct, WVWP rules, and substance abuse policies.</label>
             </div>
             */}
+
+            // const deletePlayer = async (params) => {
+//   const id = params.id;
+//   console.log("id: " + id)
+//   try {
+//     connectToDb();
+
+//     console.log("id: " + id);
+//     await Player.findByIdAndDelete(id);
+//     console.log("deleted from db");
+    
+//     revalidatePath("/players");
+//   } catch (err) {
+//     console.log(err);
+//     return { error: "Something went wrong!" };
+//   }
+// };

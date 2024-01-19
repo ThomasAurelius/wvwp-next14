@@ -19,7 +19,7 @@ const links = () => {
          </div>
        
          <div className={styles.link}>
-            <Link href="https://webpoint.usawaterpolo.com/wp15/Intralock/Login.wp">
+            <Link href="https://usawaterpolo.org/">
                <h1>USA Water Polo</h1>
                <p>Governing Body for Usa Water Polo teams</p>
             </Link>

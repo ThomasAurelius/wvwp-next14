@@ -3,7 +3,8 @@ import PostCard from '@/components/postCard/postCard'
 import React from 'react'
 import styles from './players.module.css'
 import { getPlayers } from '@/lib/data'
-
+import Link from 'next/link'
+import { auth } from '@/lib/auth'
 
 
 // const getPlayers = async () => {
@@ -16,6 +17,9 @@ import { getPlayers } from '@/lib/data'
 
 const PlayersPage = async () => {
 
+  const session = await auth();
+  const user = session.user;
+  const isAdmin = user.isAdmin
 
 
   
@@ -28,9 +32,15 @@ const PlayersPage = async () => {
   return (
     <div className={styles.container}>
       {players.map((player) => (
-        <div className={styles.player} key={player._id}>
-          <PostCard player={player} />
-        </div>
+        (isAdmin) ? ( 
+          <Link key={player.id} href={`/players/${player._id}`}>
+            <PostCard key={player.id} player={player} />
+          </Link>
+            ) : (
+          <PostCard key={player.id} player={player} />
+            )
+          
+            
       ))}
       
     </div>

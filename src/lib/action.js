@@ -7,6 +7,8 @@ import bcrypt from "bcryptjs";
 
 import { revalidatePath } from "next/cache";
 
+import { redirect } from "next/navigation";
+
 export const handleGithubLogin = async () => {
   "use server";
   await signIn('github')
@@ -231,17 +233,15 @@ export const updatePlayer = async (prevState, formData) => {
 
 
 export const deletePlayer = async (prevState, formData) => {
-  console.log("FormData :" + formData)
+ 
   const { _id } = Object.fromEntries(formData);
-  console.log("_id: " + _id)
   try {
     connectToDb();
-
-    console.log("_id: " + _id);
     await Player.findByIdAndDelete(_id);
-    console.log("deleted from db");
+    console.log("deleted " + _id + " from db");
+    redirect('/players')
+     revalidatePath("/players");
     
-    revalidatePath("/players");
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
