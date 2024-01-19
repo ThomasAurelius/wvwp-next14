@@ -36,12 +36,7 @@ const links = () => {
                <p>Official Abuse Policy for WVWP</p>
             </Link>
          </div>
-         <div className={styles.link}>
-            <Link href="/policies/policy">
-               <h1>WVWP Policies</h1>
-               <p>Official Policies for WVWP</p>
-            </Link>
-         </div>
+         
       </div>
     </div>
   )

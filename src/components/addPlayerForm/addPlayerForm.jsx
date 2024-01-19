@@ -28,7 +28,7 @@ const AddPlayerForm = ({session}) => {
           <input type="text" required placeholder="Player Last Name" name="lastname" />
           <input type="phone" required placeholder="Player Phone Number" name="phone" />
           <input type="email" required placeholder="Player Email" name="email" />
-          <input type="text" required placeholder="Player Age as of August 1st" name="age" />
+          <input type="number" required placeholder="Player Age as of August 1st" name="age" min="5" max="25" />
           <select required name="gender">
             <option value="">Gender?</option>
             <option value="Male">Male</option>
@@ -36,16 +36,13 @@ const AddPlayerForm = ({session}) => {
           </select>        
           <input type="text" placeholder="Player USA WP Number" name="usaWPnum"/>
           <input type="text" placeholder="Referred by" name="referrer"/>
-          <input type="text" required placeholder="Player School Year" name="year"/>
+          <input type="text" required placeholder="Player School Year" min="1" max="12" name="year"/>
           <input type="hidden" name="parentUserId" value={session.session.user.id} />
-          <p>Read and agreed to <Link className={styles.link} href="/policies/WVWPCoC" target="_blank">WVWP Code of Conduct</Link>, <Link className={styles.link} href="/policies/policy" target="_blank">Policies</Link> and <Link className={styles.link} href="/policies/substance" target="_blank" >Substance Abuse Policy</Link>?</p>
-          <select required name="agreeCoC">
-            <option value="false">Read and Agree?</option>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-          </select>
+          <p>By pushing the button below, you affirm that you have read and agreed to <Link className={styles.link} href="/policies/WVWPCoC" target="_blank">WVWP Code of Conduct</Link> and <Link className={styles.link} href="/policies/substance" target="_blank" >Substance Abuse Policy</Link>?</p>
           
-          <button onSubmit={addPlayer}>Add Player</button>
+          <input type="hidden" name="agreeCoC" value="true" />
+          
+          <button onSubmit={addPlayer}>I agree, Add Player</button>
          
         </form>
       </div>

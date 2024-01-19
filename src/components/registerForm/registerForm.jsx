@@ -19,19 +19,19 @@ const RegisterForm = () => {
   return (
     <div>
       <form className={styles.form} action={formAction}>
-          <input type="text" placeholder="firstname" name="firstname" />
-          <input type="text" placeholder="lastname" name="lastname" />
-          <input type="text" placeholder="phone" name="phone" />
-          <input type="text" placeholder="email" name="email"/>
-          <input type="text" placeholder="street" name="street"/>
-          <input type="text" placeholder="city" name="city"/>
-          <input type="text" placeholder="state" name="state"/>
-          <input type="text" placeholder="zip" name="zip"/>
-          <input type="password" placeholder="password" name="password" />
-          <input type="password" placeholder="confirm password"  name="confirmPassword"/>
+          <input type="text" required placeholder="firstname" name="firstname" />
+          <input type="text" required placeholder="lastname" name="lastname" />
+          <input type="phone" required placeholder="phone" name="phone" />
+          <input type="email" required placeholder="email" name="email"/>
+          <input type="text" required placeholder="street" name="street"/>
+          <input type="text" required placeholder="city" name="city"/>
+          <input type="text" required placeholder="state" name="state"/>
+          <input type="number" required placeholder="zip" name="zip"/>
+          <input type="password" required placeholder="password" name="password" />
+          <input type="password" required placeholder="confirm password"  name="confirmPassword"/>
           <button>Register</button>
           {state?.error}
-          <Link href="/login">Have an account? <b>Register</b></Link>
+          <Link href="/login">Have an account? <b>Sign In</b></Link>
       </form>
    </div>
   )

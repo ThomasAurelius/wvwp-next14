@@ -32,7 +32,7 @@ export const handleGithubLogin = async () => {
       const user = await User.findOne({email});
 
       if (user) {
-        return "Username already exists"
+        return {error: "Username already exists"}
       }
 
       const salt = await bcrypt.genSalt(10);
