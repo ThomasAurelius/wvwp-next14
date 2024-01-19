@@ -1,17 +1,10 @@
 "use client"
 import styles from './editPlayerForm.module.css'
 import { updatePlayer } from '@/lib/action'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useFormState } from 'react-dom'
-import { connectToDb } from '@/lib/utils'
-import { Player } from '@/lib/models'
-import { revalidatePath } from "next/cache";
-import { connect } from 'mongoose'
-import { useParams } from 'next/navigation'
-import { useEffect } from 'react'
-import router from 'next/router'
+import { useParams, useRouter } from 'next/navigation'
 import  DeletePlayer  from '../deletePlayer/deletePlayer'
-
 
 
 const EditPlayerForm = ({player}) => {
@@ -19,6 +12,8 @@ const EditPlayerForm = ({player}) => {
   const [state, formAction] = useFormState(
 updatePlayer, undefined
   )
+
+const router = useRouter()
 
   useEffect(() => {
        (state?.success) && router.push('/players') 
@@ -35,8 +30,6 @@ updatePlayer, undefined
     console.log("Name: " + name + " Value: " + value)
     setPlayerState({ ...playerState, [name]: value });
   }
-
-
 
   
     //const lastUpdated = player.updatedAt.toString()

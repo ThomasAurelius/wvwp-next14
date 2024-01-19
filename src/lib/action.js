@@ -239,7 +239,7 @@ export const deletePlayer = async (prevState, formData) => {
     connectToDb();
     await Player.findByIdAndDelete(_id);
     console.log("deleted " + _id + " from db");
-    redirect('/players')
+   
      revalidatePath("/players");
     
   } catch (err) {
