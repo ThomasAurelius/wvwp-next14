@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Willamette Valley Water Polo',
-  description: 'Willamette Valley Water Polo is a water polo club in the Willamette Valley of Oregon.1',
+  description: 'Willamette Valley Water Polo is a water polo club in the Willamette Valley of Oregon.',
 }
 
 export default function RootLayout({ children }) {
