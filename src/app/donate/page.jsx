@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect } from 'react'
 import styles from './donate.module.css'
 import Script from 'next/script'
