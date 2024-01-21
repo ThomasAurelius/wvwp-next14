@@ -13,7 +13,7 @@ const DeleteUser = ({user}) => {
       <form action={formAction}>
          <input type="hidden" name="_id" value={user._id} />
          <input type="hidden" name="name" value={user.firstname} />
-         <button onSubmit={deleteUser} className="my-2 bg-blue-300 border-black">Delete Player</button>
+         <button onSubmit={deleteUser} className="my-2 bg-blue-300 border-black">Delete Parent Account</button>
       </form>
     
     </div>

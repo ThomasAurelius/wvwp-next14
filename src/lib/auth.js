@@ -60,7 +60,7 @@ export const { handlers:{GET, POST}, auth, signIn, signOut } = NextAuth({
 
                if(!user) {
                   const newUser = new User({
-                     username: profile.name,
+                     
                      email: profile.email,
                     
                      
