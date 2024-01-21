@@ -39,15 +39,8 @@ const AddPlayerForm = ({session}) => {
           <input type="text" required placeholder="Player School Year"  name="year"/>
           <select required name="year">
             <option value="">School Year?</option>
-            <option value="4">4th Grade</option>
-            <option value="5">5th Grade</option>
-            <option value="6">6th Grade</option>
-            <option value="7">7th Grade</option>
-            <option value="8">8th Grade</option>
-            <option value="9">9th Grade</option>
-            <option value="10">10th Grade</option>
-            <option value="11">11th Grade</option>
-            <option value="12">12th Grade</option>
+            <option value="8th and Under">8th and Under</option>
+            <option value="High School">High School</option>
             <option value="Master">Master</option>
           </select>
           <input type="hidden" name="parentUserId" value={session.session.user.id} />
