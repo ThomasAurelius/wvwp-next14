@@ -3,3 +3,16 @@
    flex-wrap: wrap;
    gap: 30px;
 }
+
+.link {
+   cursor: pointer;
+   color: blue
+}
+
+.contact {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   justify-content: center;
+   align-items: center;
+}

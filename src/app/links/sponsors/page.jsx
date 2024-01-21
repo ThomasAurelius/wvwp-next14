@@ -19,6 +19,11 @@ const SponsorsPage = () => {
       <Image src='/CorvallisMovingAndStorage.jpg' alt="Corvallis Moving and Storage logo" width={180} height={180} />
       <Image src='/FHJA-logo-bluesilver-300x76.jpg' alt="FHJA logo" width={300} height={76} />
     </div>
+
+    <div className={styles.contact}>
+      <h2>Sponsor us and be seen by thousands as a community supporter!</h2>
+      <h3 >Questions? <a className={styles.link} href="mailto:wvwpcoach@outlook.com">Contact us!</a></h3>
+    </div>
     </>
   )
 }
