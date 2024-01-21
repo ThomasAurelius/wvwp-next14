@@ -37,6 +37,18 @@ const AddPlayerForm = ({session}) => {
           <input type="text" placeholder="Player USA WP Number" name="usaWPnum"/>
           <input type="text" placeholder="Referred by" name="referrer"/>
           <input type="text" required placeholder="Player School Year"  name="year"/>
+          <select required name="year">
+            <option value="">School Year?</option>
+            <option value="5">5th Grade</option>
+            <option value="6">6th Grade</option>
+            <option value="7">7th Grade</option>
+            <option value="8">8th Grade</option>
+            <option value="9">9th Grade</option>
+            <option value="10">10th Grade</option>
+            <option value="11">11th Grade</option>
+            <option value="12">12th Grade</option>
+            <option value="Master">Master</option>
+          </select>
           <input type="hidden" name="parentUserId" value={session.session.user.id} />
           <p>By pushing the button below, you affirm that you have read and agreed to <Link className={styles.link} href="/policies/WVWPCoC" target="_blank">WVWP Code of Conduct</Link> and <Link className={styles.link} href="/policies/substance" target="_blank" >Substance Abuse Policy</Link>?</p>
           

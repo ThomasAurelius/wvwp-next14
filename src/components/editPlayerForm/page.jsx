@@ -22,7 +22,7 @@ const router = useRouter()
   const params = useParams();
 
   const [playerState, setPlayerState] = useState(player)
-
+   
 
    function handleChange(event) {
     let value = event.target.value;
@@ -54,7 +54,7 @@ const router = useRouter()
               <input onChange={handleChange} type="text" name="usaWPnum" id="usaWPnum" value={playerState.usaWPnum} />
             </div>
             <div>
-              <label htmlFor="email">Email: </label>
+              <label htmlFor="email">Player Email: </label>
               <input onChange={handleChange} type="text" name="email" id="email" value={playerState.email} />
             </div>
             <div>
