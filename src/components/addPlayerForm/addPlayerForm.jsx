@@ -28,7 +28,7 @@ const AddPlayerForm = ({session}) => {
           <input type="text" required placeholder="Player Last Name" name="lastname" />
           <input type="phone" required placeholder="Player Phone Number" name="phone" />
           <input type="email" required placeholder="Player Email" name="email" />
-          <input type="number" required placeholder="Player Age as of August 1st" name="age" min="5" max="25" />
+          <input type="number" required placeholder="Player Age as of August 1st" name="age" min="5" max="35" />
           <select required name="gender">
             <option value="">Gender?</option>
             <option value="Male">Male</option>

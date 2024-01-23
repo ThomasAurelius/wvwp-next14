@@ -84,7 +84,7 @@ const router = useRouter()
             <div>
             <label htmlFor="isMaster">Is Master?: </label>
             <select onChange={handleChange} name="isMaster" value={playerState.isMaster}>
-              <option value="">Is Master?</option>
+              <option value="false">Is Master?</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
@@ -92,7 +92,7 @@ const router = useRouter()
             <div>
             <label htmlFor="duesPaid">Dues Paid?: </label>
             <select onChange={handleChange} name="duesPaid" value={playerState.duesPaid}>
-              <option value="">Dues Paid?</option>
+              <option value="false">Dues Paid?</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
@@ -100,7 +100,7 @@ const router = useRouter()
             <div>
             <label htmlFor="tournPaid">Tournaments Paid?: </label>
             <select onChange={handleChange} name="tournPaid" value={playerState.tournPaid}>
-              <option value="">Tournaments Paid?</option>
+              <option value="false">Tournaments Paid?</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
@@ -108,7 +108,7 @@ const router = useRouter()
             <div>
             <label htmlFor="agreeCoC">Agreed to Code Of Conduct, WVWP rules, and substance abuse policies?: </label>
             <select onChange={handleChange} name="agreeCoC" value={playerState.agreeCoC}>
-              <option value="">Agreed to Code Of Conduct, WVWP rules, and substance abuse policies?</option>
+              <option value="false">Agreed to Code Of Conduct, WVWP rules, and substance abuse policies?</option>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
