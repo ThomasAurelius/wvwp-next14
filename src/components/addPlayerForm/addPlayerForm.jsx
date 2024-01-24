@@ -36,17 +36,18 @@ const AddPlayerForm = ({session}) => {
           </select>        
           <input type="text" placeholder="Player USA WP Number" name="usaWPnum"/>
           <input type="text" placeholder="Referred by" name="referrer"/>
-          <input type="text" required placeholder="Player School Year"  name="year"/>
+          
           <select required name="year">
             <option value="">School Year?</option>
             <option value="8th and Under">8th and Under</option>
             <option value="High School">High School</option>
             <option value="Master">Master</option>
           </select>
+          <input type="hidden" name="agreeCoC" value={true} placeholder='True' />
           <input type="hidden" name="parentUserId" value={session.session.user.id} />
           <p>By pushing the button below, you affirm that you have read and agreed to <Link className={styles.link} href="/policies/WVWPCoC" target="_blank">WVWP Code of Conduct</Link> and <Link className={styles.link} href="/policies/substance" target="_blank" >Substance Abuse Policy</Link>?</p>
           
-          <input type="hidden" name="agreeCoC" value="true" />
+          
           
           <button onSubmit={addPlayer}>I agree, Add Player</button>
          

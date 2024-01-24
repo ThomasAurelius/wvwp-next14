@@ -32,6 +32,9 @@ const PostCard = ({player}) => {
           <p className={styles.desc}>{player._id}</p>
         </div>
       */}
+        <div>
+          <button disabled className={styles.button}>Edit</button>
+        </div>
       </div>
       
     

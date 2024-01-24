@@ -3,13 +3,13 @@ import React from 'react'
 import { getUsers } from '@/lib/data'
 import styles from './adminUsers.module.css'
 import UserCard from '../userCard/page'
-import DeleteUser from '../deleteUser/deleteUser'
+
 
 
 const AdminUsers = async () => {
  
   const users = await getUsers()
-
+ 
   return (
     <div className={styles.container}>
     <h1>Users</h1>
@@ -19,7 +19,7 @@ const AdminUsers = async () => {
           
             <UserCard user={user} />
             </div>
-            <DeleteUser user={user} />
+           
         </div>
       ))}
     </div>

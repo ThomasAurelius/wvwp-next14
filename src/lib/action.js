@@ -102,14 +102,14 @@ export const handleGithubLogin = async () => {
   }
 };
 
-export const deleteUser = async (formData) => {
-  const { id } = Object.fromEntries(formData);
+export const deleteUser = async (prevState, formData) => {
+  const { _id } = Object.fromEntries(formData);
 
   try {
     connectToDb();
 
     // await Post.deleteMany({ userId: id });
-    await User.findByIdAndDelete(id);
+    await User.findByIdAndDelete(_id);
     console.log("deleted from db");
     revalidatePath("/admin");
   } catch (err) {
@@ -146,13 +146,13 @@ export const addPost = async (prevState,formData) => {
 };
 
 
-export const deletePost = async (formData) => {
- const { id } = Object.fromEntries(formData);
+export const deletePost = async (prevState, formData) => {
+ const { _id } = Object.fromEntries(formData);
 
   try {
     connectToDb();
 
-    await Post.findByIdAndDelete(id);
+    await Post.findByIdAndDelete(_id);
     console.log("deleted from db");
     revalidatePath("/blog");
     revalidatePath("/admin");
@@ -165,7 +165,7 @@ export const deletePost = async (formData) => {
 
 export const addPlayer = async (prevState, formData) => {
   
-  const { firstname, lastname, phone, email, age, gender, usaWPnum, referrer, year, parentUserId } = Object.fromEntries(formData);
+  const { firstname, lastname, phone, email, age, gender, usaWPnum, referrer, year, parentUserId, agreeCoC} = Object.fromEntries(formData);
 
   try {
     connectToDb();
@@ -180,6 +180,7 @@ export const addPlayer = async (prevState, formData) => {
       referrer,
       year,
       parentUserId,
+      agreeCoC,
     });
 
     await newPlayer.save();
@@ -187,6 +188,7 @@ export const addPlayer = async (prevState, formData) => {
     revalidatePath("/blog");
     revalidatePath("/admin");
     revalidatePath("/parent");
+    
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
@@ -239,8 +241,8 @@ export const deletePlayer = async (prevState, formData) => {
     connectToDb();
     await Player.findByIdAndDelete(_id);
     console.log("deleted " + _id + " from db");
-   
-     revalidatePath("/players");
+    redirect("/players");
+    revalidatePath("/players/");
     
   } catch (err) {
     console.log(err);

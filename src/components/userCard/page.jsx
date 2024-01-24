@@ -1,4 +1,6 @@
+'use client'
 import React from 'react'
+import DeleteUser from '../deleteUser/deleteUser'
 
 const UserCard = ({user}) => {
   return (
@@ -10,7 +12,7 @@ const UserCard = ({user}) => {
          <p>{user.street}</p>
          <p>{user.city}, {user.state} {user.zip}</p>
       </div>
-      
+      <DeleteUser user={user} />
 
     </div>
   )

@@ -72,7 +72,7 @@ const playerSchema = new mongoose.Schema({
       },
       agreeCoC: {
          type: Boolean,
-        
+        default: true,
       },
       firstname: {
          type: String,
@@ -96,7 +96,7 @@ const playerSchema = new mongoose.Schema({
       },
       isMaster: {
          type: Boolean,
-        
+         default: false,
       }, 
       phone: {
          type: String,
@@ -104,11 +104,11 @@ const playerSchema = new mongoose.Schema({
       },
       duesPaid: {
          type: Boolean,
-         
+         default: false,
       },
       tournPaid: {
          type: Boolean,
-         
+         default: false,
       },
       usaWPnum: {
          type: String,

@@ -1,4 +1,4 @@
-"use client"
+
 import React from 'react'
 import { deleteUser } from '@/lib/action'
 import { useFormState } from 'react-dom'
@@ -7,7 +7,7 @@ const DeleteUser = ({user}) => {
    const [state, formAction] = useFormState(
       deleteUser, undefined
    )
-
+console.log(user)
   return (
     <div>
       <form action={formAction}>
