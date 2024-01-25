@@ -5,6 +5,8 @@ import { getPlayerById } from '../../../lib/data';
 import { auth } from '@/lib/auth';
 import { getUser } from '@/lib/data';
 
+import { redirect } from 'next/navigation';
+
 import EditPlayerForm from '@/components/editPlayerForm/page';
 import ShowPlayerForm from '@/components/showPlayerForm/page';
 
@@ -16,6 +18,7 @@ const SinglePlayerPage = async ({params}) => {
  
 
   const player = await getPlayerById(params.id);
+  if (!player) return redirect('/players')
   const parent = await getUser(player.parentUserId)
   const parentEmail = parent.email
   console.log("Parent Email: " + parentEmail)
