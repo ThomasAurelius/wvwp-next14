@@ -10,7 +10,7 @@ const PlayersAdmin = () => {
   return (
     <div className={styles.container}>
     <h1>PlayersAdmin</h1>
-    <div className={styles.container}>
+    <div>
       <div className={styles.row}>
         <div className={styles.col}>
           <Suspense fallback={<div>Loading...</div>}>

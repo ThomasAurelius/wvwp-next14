@@ -20,10 +20,7 @@ console.log(user)
           <div className={styles.detail}>
         
             <PostCard player={player}  />
-            <form className={styles.deleteFrom} action={deletePlayer}>
-               {/* <input type="hidden" name="id" value={player.id} /> */}
-               <button className={styles.deleteButton}>Delete</button>
-            </form>
+            
         </div>
         </div>
       ))}
