@@ -4,11 +4,18 @@ import {addPlayer} from '../../lib/action'
 import {useFormState, useFormStatus} from 'react-dom'
 import {useEffect} from 'react'
 import {useRouter} from 'next/navigation'
+import {useState} from 'react'
 
 import Link from 'next/link'
 
 
 const AddPlayerForm = ({session}) => {
+
+  const [showPlayerForm, setShowPlayerForm] = useState(false)
+  
+  const togglePlayerForm = () => {
+    setShowPlayerForm(!showPlayerForm)
+  }
 
   const router = useRouter();
   const [state, formAction] = useFormState(addPlayer, undefined)
@@ -22,7 +29,9 @@ const AddPlayerForm = ({session}) => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
+      {  (!showPlayerForm) ? <button className={styles.button} onClick={togglePlayerForm}>Add Player</button> :
         <form className={styles.form} action={formAction}>
+          <button id={styles.x} onClick={togglePlayerForm}>X</button>
           <h1>Add Player</h1>
           <input type="text" required placeholder="Player First Name" name="firstname" />
           <input type="text" required placeholder="Player Last Name" name="lastname" />
@@ -46,12 +55,16 @@ const AddPlayerForm = ({session}) => {
           <input type="hidden" name="agreeCoC" value={true} placeholder='True' />
           <input type="hidden" name="parentUserId" value={session.session.user.id} />
           <p>By pushing the button below, you affirm that you have read and agreed to <Link className={styles.link} href="/policies/WVWPCoC" target="_blank">WVWP Code of Conduct</Link> and <Link className={styles.link} href="/policies/substance" target="_blank" >Substance Abuse Policy</Link>?</p>
-          
+          <h2 className={styles.message}>
+          {state?.error}
+          {state?.success}
+          </h2>
           
           
           <button onSubmit={addPlayer}>I agree, Add Player</button>
          
         </form>
+  }
       </div>
     </div>
   )

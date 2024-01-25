@@ -7,7 +7,10 @@ import bcrypt from "bcryptjs";
 
 import { revalidatePath } from "next/cache";
 
-import { redirect } from "next/navigation";
+
+
+
+
 
 export const handleGithubLogin = async () => {
   "use server";
@@ -188,7 +191,7 @@ export const addPlayer = async (prevState, formData) => {
     revalidatePath("/blog");
     revalidatePath("/admin");
     revalidatePath("/parent");
-    
+    return { success: "Player Added!"}
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
