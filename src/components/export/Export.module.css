@@ -1,0 +1,13 @@
+.container {
+
+}
+
+.button {
+      padding: 10px;
+      cursor: pointer;
+      background-color: var(--btn);
+      color: var(--textColor);
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+}

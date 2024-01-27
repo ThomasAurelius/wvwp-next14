@@ -7,7 +7,8 @@ import bcrypt from "bcryptjs";
 
 import { revalidatePath } from "next/cache";
 
-
+const { default: mongoose } = require("mongoose");
+import mongooseToCsv from 'mongoose-to-csv';
 
 
 
@@ -253,3 +254,47 @@ export const deletePlayer = async (prevState, formData) => {
   }
 };
 
+// export const exportPlayers = async() => {
+//   var PlayerSchema = new mongoose.Schema({
+//     firstname: String,
+//     lastname: String,
+//     phone: String,
+//     email: String,
+//     dob: Date,
+//     age: Number,
+//     agreeCoC: Boolean,
+//     isMaster: Boolean,
+//     duesPaid: Boolean,
+//     tournPaid: Boolean,
+//     usaWPnum: String,
+//     referrer: String,
+
+//   });
+  
+//   PlayerSchema.plugin(mongooseToCsv, {
+//     headers: 'Firstname Lastname Phone Email DOB Age AgreeCoC isMaster duesPaid tournPaid usaWPnum referrer'.split(' '),
+//     constraints: {
+//       'Firstname': 'firstname',
+//       'Lastname': 'lastname',
+//       'Phone': 'phone',
+//       'Email': 'email',
+//       'DOB': 'dob',
+//       'Age': 'age',
+//       'AgreeCoC': 'agreeCoC',
+//       'isMaster': 'isMaster',
+//       'duesPaid': 'duesPaid',
+//       'tournPaid': 'tournPaid',
+//       'usaWPnum': 'usaWPnum',
+//       'referrer': 'referrer',
+//     }
+//   });
+  
+  
+//   var Player = mongoose.model('Player', PlayerSchema)
+  
+//   Player.find({}).exec()
+//   .then(function(docs) {
+//     Player.csvReadStream(docs)
+//       .pipe(fs.createWriteStream('players.csv'));
+//   });
+// }
