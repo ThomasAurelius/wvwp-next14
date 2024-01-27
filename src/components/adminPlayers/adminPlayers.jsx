@@ -6,6 +6,7 @@ import { deletePlayer } from '@/lib/action'
 import PostCard from '../postCard/postCard'
 import { auth } from '@/lib/auth'
 import Export from '../export/Export'
+import Link from 'next/link'
 
 const AdminPlayers = async () => {
   const session = auth()
@@ -20,8 +21,9 @@ console.log(user)
       {players.map((player) => (
          <div className={styles.player} key={player._id}>
           <div className={styles.detail}>
-        
-            <PostCard player={player}  />
+            <Link href={`/players/${player._id}`}>
+              <PostCard player={player}  />
+            </Link>
             
         </div>
         </div>
