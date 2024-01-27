@@ -46,7 +46,7 @@ const router = useRouter()
               <input onChange={handleChange} name="firstname" type="text" className="form-control" id="firstname" value={playerState.firstname} />
             </div>
             <div>
-              <label htmlFor="lastname">playerState Last Name: </label>
+              <label htmlFor="lastname">Player Last Name: </label>
               <input onChange={handleChange} name="lastname" type="text" className="form-control" id="lastname" value={playerState.lastname} />
             </div>
             <div>
