@@ -32,7 +32,7 @@ const router = useRouter()
   }
 
   
-    //const lastUpdated = player.updatedAt.toString()
+    const lastUpdated = player.updatedAt.toString()
    
    
   return (
@@ -41,84 +41,63 @@ const router = useRouter()
       <form action={formAction}>
            <h1 className='mb-3 text-2xl font-semibold tracking-tight'>Edit Player Details</h1> 
            <input onChange={handleChange} type="hidden" name="_id" value={player._id} />
-            <div>
-              <label htmlFor="firstname">Player First Name: </label>
-              <input onChange={handleChange} name="firstname" type="text" className="form-control" id="firstname" value={playerState.firstname} />
-            </div>
-            <div>
-              <label htmlFor="lastname">Player Last Name: </label>
-              <input onChange={handleChange} name="lastname" type="text" className="form-control" id="lastname" value={playerState.lastname} />
-            </div>
-            <div>
-              <label htmlFor="usaWPnum">USA Water Polo #: </label>
-              <input onChange={handleChange} type="text" name="usaWPnum" id="usaWPnum" value={playerState.usaWPnum} />
-            </div>
-            <div>
-              <label htmlFor="email">Player Email: </label>
-              <input onChange={handleChange} type="text" name="email" id="email" value={playerState.email} />
-            </div>
-            <div>
-              <label htmlFor="phone">Phone: </label>
-              <input onChange={handleChange} type="text" name="phone" id="phone" value={playerState.phone} />
-            </div>
-            <div>
-              <label htmlFor="dob">Date of Birth: </label>
-              <input onChange={handleChange} type="text" name="dob" id="dob" value={playerState.dob?.toString()} />
-            </div>
-            <div>
-              <label htmlFor="age">Age: </label>
-              <input onChange={handleChange} type="text" name="age" id="age" value={playerState.age} />
-            </div>
-            <div>
-              <label htmlFor="year">Year: </label>
-              <input onChange={handleChange} type="text" name="year" id="year" value={playerState.year} />
-            </div>
-            <div>
-              <label htmlFor="gender">Gender: </label>
-              <input onChange={handleChange} type="text" name="gender" id="gender" value={playerState.gender} />
-            </div>
-            <div>
-              <label htmlFor="referrer">Referred By: </label>
-              <input onChange={handleChange} type="text" name="referrer" id="referrer" value={playerState.referrer} />
-            </div>
-            <div>
-            <label htmlFor="isMaster">Is Master?: </label>
-            <select onChange={handleChange} name="isMaster" value={playerState.isMaster}>
-              <option value="false">Is Master?</option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-            </div>
-            <div>
-            <label htmlFor="duesPaid">Dues Paid?: </label>
-            <select onChange={handleChange} name="duesPaid" value={playerState.duesPaid}>
-              <option value="false">Dues Paid?</option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-            </div>
-            <div>
-            <label htmlFor="tournPaid">Tournaments Paid?: </label>
-            <select onChange={handleChange} name="tournPaid" value={playerState.tournPaid}>
-              <option value="false">Tournaments Paid?</option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-            </div>
-            <div>
-            <label htmlFor="agreeCoC">Agreed to Code Of Conduct, WVWP rules, and substance abuse policies?: </label>
-            <select onChange={handleChange} name="agreeCoC" value={playerState.agreeCoC}>
-              <option value="false">Agreed to Code Of Conduct, WVWP rules, and substance abuse policies?</option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
+            <div className={styles.wrapper}>
+              <div className={styles.labels}>
+                <label htmlFor="firstname">Player First Name: </label>
+                <label htmlFor="lastname">Player Last Name: </label>
+                <label htmlFor="usaWPnum">USA Water Polo #: </label>
+                <label htmlFor="email">Player Email: </label>
+                <label htmlFor="phone">Phone: </label>
+                <label htmlFor="dob">Date of Birth: </label>
+                <label htmlFor="age">Age: </label>
+                <label htmlFor="year">Year: </label>
+                <label htmlFor="gender">Gender: </label>
+                <label htmlFor="referrer">Referred By: </label>
+                <label htmlFor="isMaster">Is Master?: </label>
+                <label htmlFor="duesPaid">Dues Paid?: </label>
+                <label htmlFor="tournPaid">Tournaments Paid?: </label>
+                <label htmlFor="agreeCoC">Agreed to Code Of Conduct, WVWP rules, and substance abuse policies?: </label>
+              </div>
+              <div className={styles.inputs}>
+                <input onChange={handleChange} name="firstname" type="text" className={styles.input} id="firstname" value={playerState.firstname} />
+                <input onChange={handleChange} name="lastname" type="text" className={styles.input} id="lastname" value={playerState.lastname} />
+                <input className={styles.input} onChange={handleChange} type="text" name="usaWPnum" id="usaWPnum" value={playerState.usaWPnum} />
+                <input className={styles.input} onChange={handleChange} type="text" name="email" id="email" value={playerState.email} />
+                <input className={styles.input} onChange={handleChange} type="text" name="phone" id="phone" value={playerState.phone} />
+                <input className={styles.input} onChange={handleChange} type="text" name="dob" id="dob" value={playerState.dob?.toString()} />
+                <input className={styles.input} onChange={handleChange} type="text" name="age" id="age" value={playerState.age} />
+                <input className={styles.input} onChange={handleChange} type="text" name="year" id="year" value={playerState.year} />
+                <input className={styles.input} onChange={handleChange} type="text" name="gender" id="gender" value={playerState.gender} />
+                <input className={styles.input} onChange={handleChange} type="text" name="referrer" id="referrer" value={playerState.referrer} />
+                <select className={styles.input} onChange={handleChange} name="isMaster" value={playerState.isMaster}>
+                  <option value="false">Is Master?</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+                <select className={styles.input} onChange={handleChange} name="duesPaid" value={playerState.duesPaid}>
+                  <option value="false">Dues Paid?</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+                <select className={styles.input} onChange={handleChange} name="tournPaid" value={playerState.tournPaid}>
+                  <option value="false">Tournaments Paid?</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+                <select className={styles.input} onChange={handleChange} name="agreeCoC" value={playerState.agreeCoC}>
+                  
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              
+              </div>
             </div>
 
  
-              <p className="text-sm text-red-800 font-bold">Last Updated: </p>
+              <p className="text-sm text-red-800 font-bold">Last Updated: {lastUpdated}</p>
 {/*             look up player's user (Parent/gaurdian etc) details, link to their user profile. */}
-        
-            <button onSubmit={updatePlayer} className="my-2 bg-blue-300 border-black">Update Player</button> <br></br>
+        <br></br>
+            <button className={styles.button} onSubmit={updatePlayer} >Update Player</button> <br></br>
           
             
         </form>

@@ -12,6 +12,7 @@
    --blue: #18abd0;
    --yellow: #fbd600;
    --green: #99b84f;
+   --red: #e74c3c;
 
 }
 
@@ -52,6 +53,8 @@ a{
    flex-direction: column;
    justify-content: space-between;
 }
+
+
 
 @media (max-width: 1536px) {
    .container {
