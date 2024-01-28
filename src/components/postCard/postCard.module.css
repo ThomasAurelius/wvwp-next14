@@ -52,12 +52,19 @@
       width: 100%;
       display: flex;
       gap: 20px;
+      justify-content: space-around;
    }
    .bottomLeft {
       width: 100%;
    }
    .bottomRight {
       display: flex;
+      justify-content: space-around;
+   }
+   .input  {
+      max-width: 45px;
+      font-size: 16px;
+      border: none;
    }
    .date {
       transform: rotate(0deg);

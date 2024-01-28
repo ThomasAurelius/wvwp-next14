@@ -3,7 +3,6 @@ import styles from './navLink.module.css'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import React from 'react'
 
 const NavLink = ({item}) => {
 
