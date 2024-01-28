@@ -1,0 +1,27 @@
+.button {
+   
+   
+   padding: 5px;
+   cursor: pointer;
+   background-color: var(--red);
+   color: var(--textColor);
+   border: none;
+   border-radius: 5px;
+   font-weight: bold;
+   display: flex;
+   
+}
+
+.cancelButton {
+   margin-top: 20px;
+   
+   padding: 10px;
+   cursor: pointer;
+   background-color: var(--green);
+   color: var(--textColor);
+   border: none;
+   border-radius: 5px;
+   font-weight: bold;
+   display: flex;
+   
+}
