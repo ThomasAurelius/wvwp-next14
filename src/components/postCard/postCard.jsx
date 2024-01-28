@@ -19,11 +19,7 @@ const PostCard = ({player}) => {
          
       </div>
       <div className={styles.bottom}>
-        <div className={styles.bottomLeft}>
-          <p className={styles.desc}>AgreeCoC: <input type="text" disabled value={player.agreeCoC}/></p>
-          <p className={styles.desc}>Master: <input type="text" disabled value={player.isMaster}/></p>
-          
-        </div>
+        
         <div className={styles.bottomRight}>
           <p className={styles.desc}>Dues paid: <input type="text" disabled value={player.duesPaid}/></p>
           <p className={styles.desc}>Tourn paid: <input type="text" disabled value={player.tournPaid}/></p>

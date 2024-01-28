@@ -35,3 +35,35 @@
 .desc input {
    width:50px;
 }
+
+@media  (max-width: 768px) {
+   .container {
+      flex-direction: column;
+      gap: 5px;
+   }
+   .topLeft {
+      min-width: 0;
+   }
+   .top, .bottom {
+      flex-direction: column;
+      gap: 5px;
+   }
+   .topRight {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+   }
+   .bottomLeft {
+      width: 100%;
+   }
+   .bottomRight {
+      display: flex;
+   }
+   .date {
+      transform: rotate(0deg);
+   }
+   .desc input {
+      width: 100%;
+   }
+   
+}
