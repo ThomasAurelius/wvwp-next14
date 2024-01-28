@@ -6,13 +6,17 @@ const ContactPage = () => {
     <>
     <div className={styles.container}>
     <h1>Contact Details</h1>
-    <h2>Steve Sessa</h2>
-    <h3>Head Coach</h3>
-    <p>email: <a className={styles.link} href="mailto:wvwpcoach@outlook.com">wvwpcoach@outlook.com</a> </p>
+    <div className={styles.card}>
+      <h2>Steve Sessa</h2>
+      <h2>Head Coach</h2>
+      <p>email: <a className={styles.link} href="mailto:wvwpcoach@outlook.com">wvwpcoach@outlook.com</a> </p>
+    </div>
     <br></br>
-    <h2>Chris Edison</h2>
-    <h3>Assistant Coach</h3>
-    <p>email: <a className={styles.link} href="mailto:wvwpasst@outlook.com">wvwpasst@outlook.com</a> </p>
+    <div className={styles.card}>
+      <h2>Chris Edison</h2>
+      <h2>Assistant Coach</h2>
+      <p>email: <a className={styles.link} href="mailto:wvwpasst@outlook.com">wvwpasst@outlook.com</a> </p>
+    </div>
     
     </div>
     </>
