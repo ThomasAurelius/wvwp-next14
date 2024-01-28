@@ -32,3 +32,18 @@
    border-radius: 10px;
    padding: 10px;
 }
+
+@media (max-width: 768px) {
+   .container {
+      flex-direction: column;
+      height: 100%;
+   }
+   .ageSection {
+      flex-direction: column;
+      height: 100%;
+   }
+   .feeSection {
+      flex-direction: column;
+      height: 100%;
+   }
+}

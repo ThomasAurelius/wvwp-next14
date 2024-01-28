@@ -37,7 +37,16 @@
    .menuButton {
       display: block;
       cursor: pointer;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 700;
+   
+   }
+
+   .menuButtonClose {
+      display: block;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 700;
+      color: red;
    }
 }

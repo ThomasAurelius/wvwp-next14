@@ -87,3 +87,9 @@
    border-radius: 5px;
    font-weight: bold;
 }
+
+@media (max-width: 768px) {
+   .wrapper {
+      width: 90%;
+   }
+}

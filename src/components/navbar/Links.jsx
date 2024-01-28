@@ -65,6 +65,7 @@ const Links = ({session}) => {
     </div>
     <button className={styles.menuButton} onClick={()=> setOpen((prev => !prev))}>Menu</button>
     {open && <div className={styles.mobileLinks}>
+    <button className={styles.menuButtonClose} onClick={()=> setOpen((prev => !prev))}>X</button>
       {links.map((link=>(
          <NavLink item={link} key={link.title}/>
       )))} 

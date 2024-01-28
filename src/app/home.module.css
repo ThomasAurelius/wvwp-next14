@@ -57,11 +57,17 @@
             flex-direction: column;
             height: 100%;
       }
+      .img {
+            width: 70%;
+      }
 }
 
 @media (max-width: 640px) {
       .container {
             flex-direction: column;
             height: 100%;
+      }
+      .img {
+            width: 50%;
       }
 }
