@@ -1,9 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './navbar.module.css'
 import Link from 'next/link';
 import NavLink from './links/navLink/navLink';
 import { handleLogout } from '@/lib/action';
+import { usePathname } from 'next/navigation';
+import { set } from 'mongoose';
 
    const links= [ 
       {
@@ -35,7 +37,12 @@ import { handleLogout } from '@/lib/action';
 
 const Links = ({session}) => {
    const [open, setOpen] = React.useState(false);
+const path = usePathname();
 
+   useEffect (() => {
+      setOpen(false)
+   }, [path])
+   
   return (
    <div className={styles.container}>
     <div className={styles.navbarLinks}>
