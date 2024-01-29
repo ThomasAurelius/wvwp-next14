@@ -8,7 +8,7 @@ const base = "https://api-m.sandbox.paypal.com";
 const app = express();
 
 // host static files
-app.use(express.static("client"));
+app.use(express.static("client/dist"));
 
 // parse post params sent in body in json format
 app.use(express.json());
@@ -59,7 +59,7 @@ const createOrder = async (cart) => {
       {
         amount: {
           currency_code: "USD",
-          value: "200.00",
+          value: "100.00",
         },
       },
     ],
@@ -144,7 +144,7 @@ app.post("/api/orders/:orderID/capture", async (req, res) => {
 
 // serve index.html
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("./client/checkout.html"));
+  res.sendFile(path.resolve("./client/dist/index.html"));
 });
 
 app.listen(PORT, () => {
