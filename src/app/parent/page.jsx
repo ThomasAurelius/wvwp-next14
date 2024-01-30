@@ -5,6 +5,7 @@ import { getPlayers } from '@/lib/data'
 import PostCard from '@/components/postCard/postCard'
 import { auth } from '@/lib/auth'
 import Link from 'next/link'
+import PayPalButton from '@/components/paypalButton/PaypalButton'
 
 const ParentPage = async () => {
 
@@ -21,8 +22,10 @@ const ParentPage = async () => {
           <Link key={player.id} href={`/players/${player._id}`}>
             <PostCard key={player.id} player={player} />
           </Link>
-            ) : (
+            ) : (<>
           <PostCard key={player.id} player={player} />
+          
+          </>
             )
           
             ))

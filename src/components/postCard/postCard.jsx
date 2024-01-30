@@ -3,6 +3,8 @@ import styles from './postCard.module.css'
 import React from 'react'
 import Link from 'next/link'
 
+
+
 const PostCard = ({player}) => {
  
   return (
