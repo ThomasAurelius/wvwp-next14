@@ -64,7 +64,7 @@ const path = usePathname();
       </form>
       
     ) : (
-      <Link href="/login">
+      <Link className={styles.logout} href="/login">
         Login
       </Link>
     )

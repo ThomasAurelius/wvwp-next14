@@ -173,6 +173,12 @@ export const addPlayer = async (prevState, formData) => {
 
   try {
     connectToDb();
+
+    const player = await Player.findOne({email});
+
+      if (player) {
+        return {error: "Email already exists!"}
+      }
     const newPlayer = new Player({
       firstname,
       lastname,
