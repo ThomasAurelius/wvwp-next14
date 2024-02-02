@@ -20,16 +20,26 @@ const PostCard = ({player}) => {
           <h1 className={styles.title}>{player.firstname} {player.lastname}</h1>
          </div>
          <div className={styles.topRight}>
-          <p className={styles.desc}>{player.gender}</p>
-          <p className={styles.desc}>{player.year}</p>
+          <p className={styles.descGender}>{player.gender}</p>
+          <p className={styles.descYear}>{player.year}</p>
          </div>
          
       </div>
       <div className={styles.bottom}>
         
         <div className={styles.bottomRight}>
-          <p className={styles.desc}>Dues paid: <input className={styles.input} type="text" disabled value={player.duesPaid}/></p>
-          <p className={styles.desc}>Tournament paid: <input className={styles.input} type="text" disabled value={player.tournPaid}/></p>
+        { (player.duesPaid == true) ? (
+          <p className={styles.descPaid}>Dues Paid</p>
+        ) : (
+          <p className={styles.descNotPaid}>Dues Not Paid</p>
+        )}
+
+        { (player.tournPaid == true) ? (
+          <p className={styles.descPaid}>Tournament Paid</p>
+        ) : (
+          <p className={styles.descNotPaid}>Tournament Not Paid</p>
+        )}
+          
         </div>
         
         <div>

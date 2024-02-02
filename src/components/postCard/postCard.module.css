@@ -12,6 +12,8 @@
 
 .topLeft {
    min-width: 320px;
+   display: flex;
+   align-items: center;
 }
 
 .top, .bottom {
@@ -21,10 +23,20 @@
 
 .topRight {
    width: 120px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 .bottomLeft {
    width: 150px;
+}
+
+.bottomRight {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
 }
 
 .date {
@@ -32,8 +44,28 @@
    transform: rotate(270deg);
 }
 
+.descGender {
+   font-size: 20px;
+}
+
+.descYear {
+   font-size: 20px;
+}
+
 .desc input {
    width:50px;
+}
+
+.descPaid {
+   border: 1px solid black;
+   color: green;
+   font-weight: 700;   
+}
+
+.descNotPaid {
+   border: 1px solid black;
+   color: red;
+   font-weight: 700;
 }
 
 @media  (max-width: 768px) {
