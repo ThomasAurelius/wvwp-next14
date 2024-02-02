@@ -19,6 +19,7 @@ const PayPalButtonMaster = ({player}) => {
      dues = 650;
   }
   
+   const style = {"layout": "horizontal", "label": "pay", "tagline": "false", "size": "responsive", "shape": "rect", "color": "gold"}
   const paypalOptions = {
     'client-id': 'ARG22fUBxsrJDWLrV56uPQxMSCL9KqZ9BqeF-vXo8Hd4AijsHuB41JbBUiNbS0_7zujhO_4CFRGZKOM-',
     currency: 'USD',
@@ -55,7 +56,7 @@ const PayPalButtonMaster = ({player}) => {
    <div className={styles.container}>
     <PayPalScriptProvider options={paypalOptions}>
     <h2>Pay Dues</h2>
-      <PayPalButtons createOrder={createOrder} onApprove={onApprove} />
+      <PayPalButtons createOrder={createOrder} onApprove={onApprove} style={style} />
     </PayPalScriptProvider>
     
     </div>
