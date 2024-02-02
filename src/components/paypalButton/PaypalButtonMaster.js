@@ -20,7 +20,7 @@ const PayPalButtonMaster = ({player}) => {
   }
   
   const paypalOptions = {
-    'client-id': 'AaRKKqG7BeRbI6IEB5bZQwFsN-GCAuBuW42KMS04m3vqdwAFsPif_trkuImm6AZRhBgQby8uML2PozVz',
+    'client-id': 'ARG22fUBxsrJDWLrV56uPQxMSCL9KqZ9BqeF-vXo8Hd4AijsHuB41JbBUiNbS0_7zujhO_4CFRGZKOM-',
     currency: 'USD',
   };
 
