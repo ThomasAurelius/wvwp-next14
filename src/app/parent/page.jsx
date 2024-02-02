@@ -5,7 +5,7 @@ import { getPlayers } from '@/lib/data'
 import PostCard from '@/components/postCard/postCard'
 import { auth } from '@/lib/auth'
 import Link from 'next/link'
-import PayPalButton from '@/components/paypalButton/PaypalButton'
+import PayPalButton from '@/components/paypalButton/PaypalButtonMaster'
 
 const ParentPage = async () => {
 

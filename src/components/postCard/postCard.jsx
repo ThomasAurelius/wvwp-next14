@@ -2,7 +2,7 @@
 import styles from './postCard.module.css'
 import React from 'react'
 import Link from 'next/link'
-import PayPalButton from '../paypalButton/PaypalButton'
+import PayPalButton from '../paypalButton/PaypalButtonMaster'
 
 
 
@@ -32,9 +32,10 @@ const PostCard = ({player}) => {
           <button disabled className={styles.button}>Edit</button>
         </div>
       </div>
-      { (player.duesPaid == false) ? ( <div>
-        <PayPalButton player={player}/>
-      </div> ):( <></>)
+      { (player.duesPaid == false) ? ( 
+        <div>
+          <PayPalButton player={player}/>
+        </div> ):( <></>)
       }
     
     </div>

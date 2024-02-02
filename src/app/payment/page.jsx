@@ -1,4 +1,4 @@
-import PayPalButton from '@/components/paypalButton/PaypalButton'
+import PayPalButton from '@/components/paypalButton/PaypalButtonMaster'
 import styles from './payment.module.css'
 
 const PaymentPage = () => {

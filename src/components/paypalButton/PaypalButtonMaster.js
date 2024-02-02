@@ -6,11 +6,18 @@ import styles from './paypalButton.module.css'
 import { updatePlayerDuesPaid } from '@/lib/action';
 
 
-const PayPalButton = ({player}) => {
-   const playerName = player.firstname + " " + player.lastname;
-   const playerId = player._id;
- 
-
+const PayPalButtonMaster = ({player}) => {
+  const playerName = player.firstname + " " + player.lastname;
+  const playerId = player._id;
+  const grade = player.year;
+  let dues;
+  if (grade == "Master") {
+    dues = 250;
+  } else if (grade == "8th and Under") {
+     dues = 450;
+  } else {
+     dues = 650;
+  }
   
   const paypalOptions = {
     'client-id': 'AaRKKqG7BeRbI6IEB5bZQwFsN-GCAuBuW42KMS04m3vqdwAFsPif_trkuImm6AZRhBgQby8uML2PozVz',
@@ -18,12 +25,13 @@ const PayPalButton = ({player}) => {
   };
 
   const createOrder = (data, actions) => {
+   
     return actions.order.create({
       purchase_units: [
         {
           
           amount: {
-            value: '0.10', // Example amount
+            value: dues, // Example amount
           },
           description: playerName + " Club Dues",
           
@@ -54,4 +62,4 @@ const PayPalButton = ({player}) => {
   );
 };
 
-export default PayPalButton;
+export default PayPalButtonMaster;
