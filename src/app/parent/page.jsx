@@ -21,14 +21,17 @@ const ParentPage = async () => {
          (session.isAdmin) ? ( 
           <Link key={player.id} href={`/players/${player._id}`}>
             <PostCard key={player.id} player={player} />
+            
           </Link>
             ) : (<>
           <PostCard key={player.id} player={player} />
           
           </>
+          
             )
           
             ))
+            
       }
       <AddPlayerForm session={{session}} />
     </div>
