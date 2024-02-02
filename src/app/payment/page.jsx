@@ -1,3 +1,4 @@
+import PayPalButton from '@/components/paypalButton/PaypalButton'
 import styles from './payment.module.css'
 
 const PaymentPage = () => {
@@ -15,6 +16,7 @@ const PaymentPage = () => {
         <button className={styles.button}><a href="https://buy.stripe.com/test_5kA8Ae4Chbn46rueUV">Pay Tournament Fee</a>
         </button>
       </div>
+      <PayPalButton />
     </div>
   )
 }
