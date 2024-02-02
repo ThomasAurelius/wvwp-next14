@@ -11,7 +11,7 @@ import { usePathname } from 'next/navigation'
 const PostCard = ({player}) => {
   const path = usePathname();
  const paid = player.duesPaid;
- console.log(path)
+ 
   return (
     
     <div className={styles.container}>
