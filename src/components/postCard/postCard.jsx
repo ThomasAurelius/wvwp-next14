@@ -2,7 +2,8 @@
 import styles from './postCard.module.css'
 import React from 'react'
 import Link from 'next/link'
-import PayPalButton from '../paypalButton/PaypalButtonMaster'
+import PayPalButtonMaster from '../paypalButton/PaypalButtonMaster'
+import PayPalButtonTournament from '../paypalButton/PaypalButtonTournament'
 
 
 
@@ -34,7 +35,12 @@ const PostCard = ({player}) => {
       </div>
       { (player.duesPaid == false) ? ( 
         <div>
-          <PayPalButton player={player}/>
+          <PayPalButtonMaster player={player}/>
+        </div> ):( <></>)
+      }
+      { (player.tournPaid == false) ? ( 
+        <div>
+          <PayPalButtonTournament player={player}/>
         </div> ):( <></>)
       }
     

@@ -3,21 +3,13 @@
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import styles from './paypalButton.module.css'
 
-import { updatePlayerTournPaid } from '@/lib/action';
+import { updatePlayerDuesPaid } from '@/lib/action';
 
 
-const PayPalButtonMaster = ({player}) => {
+const PayPalButtonTournament = ({player}) => {
   const playerName = player.firstname + " " + player.lastname;
   const playerId = player._id;
-  const grade = player.year;
-  let dues;
-  if (grade == "Master") {
-    dues = 250;
-  } else if (grade == "8th and Under") {
-     dues = 450;
-  } else {
-     dues = 650;
-  }
+ 
   
    const style = {"layout": "horizontal", "label": "pay", "tagline": "false", "size": "responsive", "shape": "rect", "color": "gold"}
   const paypalOptions = {
@@ -32,9 +24,9 @@ const PayPalButtonMaster = ({player}) => {
         {
           
           amount: {
-            value: dues, // Example amount
+            value: '250.00', // Example amount
           },
-          description: playerName + " Club Dues",
+          description: playerName + " Tournament Fee",
           
         },
       ],
@@ -44,8 +36,8 @@ const PayPalButtonMaster = ({player}) => {
 
   const onApprove = (data, actions) => {
     return actions.order.capture().then(function (details) {
-      updatePlayerTournPaid(playerId);
-      alert('Transaction Successful!');
+      updatePlayerDuesPaid(playerId);
+      alert('Transaction completed by ' + details.payer.name.given_name);
       console.log(details);
       window.location.reload();
       
@@ -55,7 +47,7 @@ const PayPalButtonMaster = ({player}) => {
   return (
    <div className={styles.container}>
     <PayPalScriptProvider options={paypalOptions}>
-    <h4>Pay Dues</h4>
+    <h4>Pay Tournament Fee</h4>
       <PayPalButtons createOrder={createOrder} onApprove={onApprove} style={style} />
     </PayPalScriptProvider>
     
@@ -63,4 +55,4 @@ const PayPalButtonMaster = ({player}) => {
   );
 };
 
-export default PayPalButtonMaster;
+export default PayPalButtonTournament;

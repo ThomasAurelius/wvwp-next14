@@ -206,13 +206,28 @@ export const addPlayer = async (prevState, formData) => {
 };
 
 export const updatePlayerDuesPaid = async (_id) => {
-   
-
     try {
       connectToDb();
       await Player.findByIdAndUpdate(_id, {
         _id,
         duesPaid: true,
+        
+      });
+      await Player.save();
+      console.log("updated to db");
+    
+    } catch (err) {
+      console.log(err);
+      return { error: "Something went wrong!" };
+    }
+  };
+
+  export const updatePlayerTournPaid = async (_id) => {
+    try {
+      connectToDb();
+      await Player.findByIdAndUpdate(_id, {
+        _id,
+        tournPaid: true,
         
       });
       await Player.save();
