@@ -4,11 +4,14 @@ import React from 'react'
 import Link from 'next/link'
 import PayPalButtonMaster from '../paypalButton/PaypalButtonMaster'
 import PayPalButtonTournament from '../paypalButton/PaypalButtonTournament'
+import { usePathname } from 'next/navigation'
 
 
 
 const PostCard = ({player}) => {
+  const path = usePathname();
  const paid = player.duesPaid;
+ console.log(path)
   return (
     
     <div className={styles.container}>
@@ -33,12 +36,12 @@ const PostCard = ({player}) => {
           <button disabled className={styles.button}>Edit</button>
         </div>
       </div>
-      { (player.duesPaid == false) ? ( 
+      { (player.duesPaid == false & path == "/parent" ) ? ( 
         <div>
           <PayPalButtonMaster player={player}/>
         </div> ):( <></>)
       }
-      { (player.tournPaid == false) ? ( 
+      { (player.tournPaid == false & path == "/parent") ? ( 
         <div>
           <PayPalButtonTournament player={player}/>
         </div> ):( <></>)
