@@ -11,7 +11,7 @@
 }
 
 .topLeft {
-   min-width: 350px;
+   min-width: 320px;
 }
 
 .top, .bottom {
@@ -20,7 +20,7 @@
 }
 
 .topRight {
-   width: 150px;
+   width: 120px;
 }
 
 .bottomLeft {
