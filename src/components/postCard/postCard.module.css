@@ -68,6 +68,8 @@
    font-weight: 700;
 }
 
+
+
 @media  (max-width: 768px) {
    .container {
       flex-direction: column;

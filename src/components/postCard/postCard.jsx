@@ -29,15 +29,23 @@ const PostCard = ({player}) => {
         
         <div className={styles.bottomRight}>
         { (player.duesPaid == true) ? (
-          <p className={styles.descPaid}>Dues Paid</p>
+          <div className={styles.paidButton}>
+            <p className={styles.descPaid}>Dues Paid</p>
+          </div>
         ) : (
-          <p className={styles.descNotPaid}>Dues Not Paid</p>
+          <div className={styles.paidButton}>
+            <p className={styles.descNotPaid}>Dues Not Paid</p>
+          </div>
         )}
 
         { (player.tournPaid == true) ? (
-          <p className={styles.descPaid}>Tournament Paid</p>
+          <div className={styles.paidButton}>
+            <p className={styles.descPaid}>Tournament Paid</p>
+          </div>
         ) : (
-          <p className={styles.descNotPaid}>Tournament Not Paid</p>
+          <div className={styles.paidButton}>
+            <p className={styles.descNotPaid}>Tournament Not Paid</p>
+          </div>
         )}
           
         </div>
