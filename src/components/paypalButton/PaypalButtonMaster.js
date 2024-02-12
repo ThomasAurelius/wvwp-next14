@@ -3,7 +3,7 @@
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import styles from './paypalButton.module.css'
 
-import { updatePlayerTournPaid } from '@/lib/action';
+import { updatePlayerDuesPaid } from '@/lib/action';
 
 
 const PayPalButtonMaster = ({player}) => {
@@ -44,7 +44,7 @@ const PayPalButtonMaster = ({player}) => {
 
   const onApprove = (data, actions) => {
     return actions.order.capture().then(function (details) {
-      updatePlayerTournPaid(playerId);
+      updatePlayerDuesPaid(playerId);
       alert('Transaction Successful!');
       console.log(details);
       window.location.reload();
