@@ -18,12 +18,11 @@ const PostCard = ({player}) => {
         <div className={styles.top}>
           <div className={styles.topLeft}>
           <h1 className={styles.title}>{player.firstname} {player.lastname}</h1>
-         </div>
-         <div className={styles.topRight}>
+        </div>
+        <div className={styles.topRight}>
           <p className={styles.descGender}>{player.gender}</p>
           <p className={styles.descYear}>{player.year}</p>
-         </div>
-         
+        </div>
       </div>
       <div className={styles.bottom}>
         

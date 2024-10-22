@@ -16,15 +16,14 @@ updatePlayer, undefined
 const router = useRouter()
 
   useEffect(() => {
-       (state?.success) && router.push('/players') 
+    (state?.success) && router.push('/players') 
     }, state?.success, router)
 
   const params = useParams();
 
   const [playerState, setPlayerState] = useState(player)
-   
 
-   function handleChange(event) {
+  function handleChange(event) {
     let value = event.target.value;
     let name = event.target.name;
     console.log("Name: " + name + " Value: " + value)
@@ -33,8 +32,7 @@ const router = useRouter()
 
   
     const lastUpdated = player.updatedAt.toString()
-   
-   
+
   return (
 
     <div className={styles.container}>

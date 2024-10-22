@@ -1,10 +1,10 @@
 'use client'
 import styles from './addPlayerForm.module.css'
 import {addPlayer} from '../../lib/action'
-import {useFormState, useFormStatus} from 'react-dom'
-import {useEffect} from 'react'
+import {useFormState} from 'react-dom'
+import {useEffect, useState} from 'react'
 import {useRouter} from 'next/navigation'
-import {useState} from 'react'
+
 
 import Link from 'next/link'
 
@@ -23,7 +23,7 @@ const AddPlayerForm = ({session}) => {
   const formData = state
   console.log(formData)
   useEffect(() => {
-       (state?.success) && router.push('/parent') 
+    (state?.success) && router.push('/parent') 
     }, state?.success, router)
 
   return (
@@ -54,6 +54,7 @@ const AddPlayerForm = ({session}) => {
           </select>
           <input type="hidden" name="agreeCoC" value={true} placeholder='True' />
           <input type="hidden" name="parentUserId" value={session.session.user.id} />
+          <input type="hidden" name="parentEmail" value={session.session.user.email} />
           <p>By pushing the button below, you affirm that you have read and agreed to <Link className={styles.link} href="/policies/WVWPCoC" target="_blank">WVWP Code of Conduct</Link> and <Link className={styles.link} href="/policies/substance" target="_blank" >Substance Abuse Policy</Link>?</p>
           <h2 className={styles.message}>
           {state?.error}
@@ -62,7 +63,7 @@ const AddPlayerForm = ({session}) => {
           
           
           <button onSubmit={addPlayer}>I agree, Add Player</button>
-         
+        
         </form>
   }
       </div>

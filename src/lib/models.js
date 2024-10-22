@@ -72,7 +72,7 @@ const playerSchema = new mongoose.Schema({
       },
       agreeCoC: {
          type: Boolean,
-        default: true,
+         default: true,
       },
       firstname: {
          type: String,
@@ -127,6 +127,10 @@ const playerSchema = new mongoose.Schema({
          
       },  
       parentUserId: {
+         type: String,
+         
+      },
+      parentEmail: {
          type: String,
          
       },
