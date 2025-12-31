@@ -215,7 +215,7 @@ export const addPlayer = async (prevState, formData) => {
 			gender,
 			usaWPnum,
 			referrer,
-			grade,
+			year,
 			parentUserId,
 			agreeCoC,
 		});
