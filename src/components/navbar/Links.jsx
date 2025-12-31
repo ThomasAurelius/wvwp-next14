@@ -5,7 +5,6 @@ import Link from 'next/link';
 import NavLink from './links/navLink/navLink';
 import { handleLogout } from '@/lib/action';
 import { usePathname } from 'next/navigation';
-import { set } from 'mongoose';
 
    const links= [ 
       {
