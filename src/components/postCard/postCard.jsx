@@ -54,7 +54,9 @@ const PostCard = ({ player }) => {
 					</button>
 				</div>
 			</div>
-			{(player.duesPaid == false) & (path == "/parent") ? (
+			{(player.year == "Junior" || player.year == "Senior") &
+			(path == "/parent") &
+			(player.duesPaid == false) ? (
 				<div>
 					<PayPalButtonMaster player={player} />
 				</div>
