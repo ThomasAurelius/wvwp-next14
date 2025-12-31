@@ -292,7 +292,7 @@ export const updatePlayer = async (prevState, formData) => {
 			email,
 			dob,
 			age,
-			grade,
+			year,
 			gender,
 			referrer,
 			isMaster,

@@ -88,7 +88,7 @@ const AddPlayerForm = ({ session }) => {
 							name="referrer"
 						/>
 
-						<select required name="grade">
+						<select required name="year">
 							<option value="">School Year?</option>
 							<option value="Littles">Littles</option>
 							<option value="Junior">Junior</option>
