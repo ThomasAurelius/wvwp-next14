@@ -27,7 +27,7 @@ const PayPalButtonTournament = ({ player }) => {
 			purchase_units: [
 				{
 					amount: {
-						value: "275.00", // Example amount
+						value: "200.00", // Example amount
 					},
 					description: playerName + " Tournament Fee",
 				},

@@ -9,12 +9,12 @@ const PayPalButtonMaster = ({ player }) => {
 	const playerId = player._id;
 	const grade = player.year;
 	let dues;
-	if (grade == "Master") {
-		dues = 295;
-	} else if (grade == "8th and Under") {
+	if (grade == "Senior") {
 		dues = 495;
+	} else if (grade == "Junior") {
+		dues = 395;
 	} else {
-		dues = 695;
+		dues = 0;
 	}
 
 	const style = {

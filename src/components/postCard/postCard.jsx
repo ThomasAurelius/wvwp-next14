@@ -3,7 +3,7 @@ import styles from "./postCard.module.css";
 import React from "react";
 import Link from "next/link";
 import PayPalButtonMaster from "../paypalButton/PaypalButtonMaster";
-import PayPalButtonTournament from "../paypalButton/PaypalButtonTournament";
+import PayPalButtonTournament from "../paypalButton/PaypalButtonSingleTournament";
 import { usePathname } from "next/navigation";
 import PayPalButtonOpenWater from "../paypalButton/PaypalButtonOpenWater";
 import PayPalButtonSantiamMasters from "../paypalButton/PaypalButtonSantiamMasters";

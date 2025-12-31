@@ -114,7 +114,7 @@ const playerSchema = new mongoose.Schema(
 		usaWPnum: {
 			type: String,
 		},
-		year: {
+		grade: {
 			type: String,
 		},
 		referrer: {

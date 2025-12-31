@@ -4,7 +4,7 @@ import styles from "./paypalButton.module.css";
 
 import { updatePlayerTournPaid } from "@/lib/action";
 
-const PayPalButtonSantiamMasters = ({ player }) => {
+const PayPalButtonSingleTournament = ({ player }) => {
 	const playerName = player.firstname + " " + player.lastname;
 	const playerId = player._id;
 
@@ -27,9 +27,9 @@ const PayPalButtonSantiamMasters = ({ player }) => {
 			purchase_units: [
 				{
 					amount: {
-						value: "950.00", // Example amount
+						value: "75.00", // Example amount
 					},
-					description: playerName + "Santiam Masters Tournament Fee",
+					description: playerName + " Single Tournament Fee",
 				},
 			],
 		});
@@ -47,7 +47,7 @@ const PayPalButtonSantiamMasters = ({ player }) => {
 	return (
 		<div className={styles.container}>
 			<PayPalScriptProvider options={paypalOptions}>
-				<h4>Pay Santiam Masters Tournament Fee</h4>
+				<h4>Pay Single Tournament Fee</h4>
 				<PayPalButtons
 					createOrder={createOrder}
 					onApprove={onApprove}
@@ -58,4 +58,4 @@ const PayPalButtonSantiamMasters = ({ player }) => {
 	);
 };
 
-export default PayPalButtonSantiamMasters;
+export default PayPalButtonSingleTournament;
