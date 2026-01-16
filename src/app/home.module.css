@@ -22,10 +22,27 @@
       text-align: center;
       font-weight: 700;
       color: var(--text);
+      max-width: 800px;
+}
+
+.tourn a {
+      text-decoration: underline;
+      color: blue;
 }
 
 .tourn h3 {
       font-size: 30px;
+}
+
+.tournList {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 400px;
+}
+
+.tournList ul li {
+      text-decoration: none;
+      list-style-type: none;
 }
 .button1 {
       padding: 5px 10px;

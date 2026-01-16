@@ -33,7 +33,7 @@ const Home = () => {
     </div>
   </div>
   <div className={styles.container2}>
-  <h1>2025 Season Updates: </h1>
+  <h1>2026 Season Updates: </h1>
   <h2>Tournaments:</h2>
   <div className={styles.tourn}>
     <h3>Santiam Masters - $975</h3>
@@ -41,9 +41,73 @@ const Home = () => {
   </div>
   <hr></hr>
   <div className={styles.tourn}>
-    <h3>Open Water - $1995</h3>
-    <h4>(No Oregon teams allowed entry prior to 4/15)</h4>
-    <h4>(Teams may hold a spot with a 1000 deposit prior to same) pay in full prior to 6/1</h4>
+  <div>
+      <img src="openwater.png" alt="open water polo" width={500} height={400} />
+  </div>
+    <h3>Oregon Open Water - $1,995</h3>
+  <p>
+    Registration is now open for this year’s Oregon Open Water tournament June 22-26, 2026.&nbsp;&nbsp;&nbsp;
+  </p>
+
+  <p>&nbsp;</p>
+
+  <p>
+    If you’re interested in attending this year, please Clink on the PayPal link or email 
+    <a href="mailto:wvwpcoach@outlook.com"> Steve Sessa </a> 
+     and 
+    <a href="mailto:christian.edison62@gmail.com"> Chris Edison </a>
+      an invoice for a 50% deposit of the $1,995.00 tournament fee and your spot will be reserved once the deposit is paid.
+  </p>
+
+  <p>&nbsp;</p>
+
+  <h3>Tournament fees cover:</h3>
+  <div className={styles.tournList}>
+    <ul>
+      <li>Team campsite</li>
+      <li>
+        Meals
+        <ul>
+          <li> - Dinner Monday night</li>
+          <li> - Breakfast and dinner Tuesday – Thursday</li>
+          <li> -A la cart breakfast Friday morning</li>
+        </ul>
+      </li>
+      <li>Five games per team</li>
+      <li>One team entry in the Kap7 Five Lives Challenge</li>
+      <li>One entry in the club challenge</li>
+      <li>T-Shirt voucher for athletes and coaches.</li>
+      <li>(each team is limited to 15 athletes and 2 coaches)</li>
+    </ul>
+  </div>
+
+  <p>&nbsp;</p>
+
+  <h3>Division:</h3>
+  <p>
+    18 under boys&nbsp;&nbsp;&nbsp;<br/>
+    18 under girls&nbsp;<br/>
+    16 under boys&nbsp;<br/>
+    14 under co-ed&nbsp;
+  </p>
+
+  <p>&nbsp;</p>
+
+  <p>
+    If you have any questions, feel free to email 
+    <a href="mailto:wvwpcoach@outlook.com"> Steve Sessa</a>
+  </p>
+
+  <p>&nbsp;</p>
+
+  <p>
+    Stay safe,<br/>
+    <h3>Steve Sessa</h3>
+    Executive Director Willamette Valley Aquatics<br/>
+    Willamette Valley Water Polo and Albany Swim Team
+  </p>
+
+
   </div>
   </div>
   </>
