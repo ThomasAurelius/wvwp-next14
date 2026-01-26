@@ -20,13 +20,18 @@ const PostCard = ({ player }) => {
 				</div>
 				<div className={styles.infoSection}>
 					<div className={styles.badges}>
-						<span className={styles.genderBadge}>
+						<span className={`${styles.genderBadge} ${player.gender === "Male" ? styles.male : player.gender === "Female" ? styles.female : ""}`}>
 							<span className={styles.badgeIcon}>
 								{player.gender === "Male" ? "♂" : player.gender === "Female" ? "♀" : ""}
 							</span>
 							{player.gender}
 						</span>
-						<span className={styles.levelBadge}>
+						<span className={`${styles.levelBadge} ${
+							player.year === "Junior" ? styles.levelJunior :
+							player.year === "Senior" ? styles.levelSenior :
+							player.year === "High School" ? styles.levelHighSchool :
+							player.year === "Master" ? styles.levelMaster : ""
+						}`}>
 							{player.year}
 						</span>
 					</div>

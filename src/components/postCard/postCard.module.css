@@ -57,9 +57,24 @@
    border-radius: 20px;
    font-size: 14px;
    font-weight: 500;
+}
+
+.genderBadge {
    background-color: rgba(100, 100, 255, 0.15);
    color: #4444dd;
    border: 1px solid rgba(100, 100, 255, 0.3);
+}
+
+.male {
+   background-color: rgba(59, 130, 246, 0.15);
+   color: #1e40af;
+   border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.female {
+   background-color: rgba(236, 72, 153, 0.15);
+   color: #be185d;
+   border: 1px solid rgba(236, 72, 153, 0.4);
 }
 
 .badgeIcon {
@@ -71,6 +86,30 @@
    background-color: rgba(255, 165, 0, 0.15);
    color: #cc7700;
    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.levelJunior {
+   background-color: rgba(34, 197, 94, 0.15);
+   color: #15803d;
+   border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.levelSenior {
+   background-color: rgba(168, 85, 247, 0.15);
+   color: #6b21a8;
+   border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.levelHighSchool {
+   background-color: rgba(234, 179, 8, 0.15);
+   color: #a16207;
+   border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.levelMaster {
+   background-color: rgba(249, 115, 22, 0.15);
+   color: #c2410c;
+   border: 1px solid rgba(249, 115, 22, 0.4);
 }
 
 .paymentStatus {
