@@ -46,30 +46,30 @@ const PostCard = ({ player }) => {
 					</div>
 				</div>
 			</div>
-			{(player.year == "Junior" || player.year == "Senior") &
-			(path == "/parent") &
-			(player.duesPaid == false) ? (
+			{(player.year === "Junior" || player.year === "Senior") &&
+			(path === "/parent") &&
+			(player.duesPaid === false) ? (
 				<div>
 					<PayPalButtonMaster player={player} />
 				</div>
 			) : (
 				<></>
 			)}
-			{(player.tournPaid == false) & (path == "/parent") ? (
+			{(player.tournPaid === false) && (path === "/parent") ? (
 				<div>
 					<PayPalButtonTournament player={player} />
 				</div>
 			) : (
 				<></>
 			)}
-			{(player.openWaterPaid == false) & (path == "/parent") ? (
+			{(player.openWaterPaid === false) && (path === "/parent") ? (
 				<div>
 					<PayPalButtonOpenWater player={player} />
 				</div>
 			) : (
 				<></>
 			)}
-			{(player.santiamMastersPaid == false) & (path == "/parent") ? (
+			{(player.santiamMastersPaid === false) && (path === "/parent") ? (
 				<div>
 					<PayPalButtonSantiamMasters player={player} />
 				</div>
