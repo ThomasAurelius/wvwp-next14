@@ -20,29 +20,54 @@ const PostCard = ({ player }) => {
 				</div>
 				<div className={styles.infoSection}>
 					<div className={styles.badges}>
-						<span className={`${styles.genderBadge} ${player.gender === "Male" ? styles.male : player.gender === "Female" ? styles.female : ""}`}>
+						<span
+							className={`${styles.genderBadge} ${player.gender === "Male" ? styles.male : player.gender === "Female" ? styles.female : ""}`}
+						>
 							<span className={styles.badgeIcon}>
-								{player.gender === "Male" ? "♂" : player.gender === "Female" ? "♀" : ""}
+								{player.gender === "Male"
+									? "♂"
+									: player.gender === "Female"
+										? "♀"
+										: ""}
 							</span>
 							{player.gender}
 						</span>
-						<span className={`${styles.levelBadge} ${
-							player.year === "Junior" ? styles.levelJunior :
-							player.year === "Senior" ? styles.levelSenior :
-							player.year === "High School" ? styles.levelHighSchool :
-							player.year === "Master" ? styles.levelMaster : ""
-						}`}>
+						<span
+							className={`${styles.levelBadge} ${
+								player.year === "Junior"
+									? styles.levelJunior
+									: player.year === "Senior"
+										? styles.levelSenior
+										: player.year === "High School"
+											? styles.levelHighSchool
+											: player.year === "Master"
+												? styles.levelMaster
+												: ""
+							}`}
+						>
 							{player.year}
 						</span>
 					</div>
 					<div className={styles.paymentStatus}>
-						<span className={player.duesPaid ? styles.statusPaid : styles.statusNotPaid}>
+						<span
+							className={
+								player.duesPaid
+									? styles.statusPaid
+									: styles.statusNotPaid
+							}
+						>
 							<span className={styles.statusIcon}>
 								{player.duesPaid ? "✓" : "✗"}
 							</span>
 							Dues {player.duesPaid ? "Paid" : "Not Paid"}
 						</span>
-						<span className={player.tournPaid ? styles.statusPaid : styles.statusNotPaid}>
+						<span
+							className={
+								player.tournPaid
+									? styles.statusPaid
+									: styles.statusNotPaid
+							}
+						>
 							<span className={styles.statusIcon}>
 								{player.tournPaid ? "✓" : "✗"}
 							</span>
@@ -52,29 +77,35 @@ const PostCard = ({ player }) => {
 				</div>
 			</div>
 			{(player.year === "Junior" || player.year === "Senior") &&
-			(path === "/parent") &&
-			(player.duesPaid === false) ? (
+			path === "/parent" &&
+			player.duesPaid === false ? (
 				<div>
 					<PayPalButtonMaster player={player} />
 				</div>
 			) : (
 				<></>
 			)}
-			{(player.tournPaid === false) && (path === "/parent") ? (
-				<div>
-					<PayPalButtonTournament player={player} />
-				</div>
+			{player.tournPaid === false && path === "/parent" ? (
+				<>
+					<div>
+						<PayPalButtonTournament player={player} />
+					</div>
+					<hr></hr>
+				</>
 			) : (
 				<></>
 			)}
-			{(player.openWaterPaid === false) && (path === "/parent") ? (
-				<div>
-					<PayPalButtonOpenWater player={player} />
-				</div>
+			{player.openWaterPaid === false && path === "/parent" ? (
+				<>
+					<div>
+						<PayPalButtonOpenWater player={player} />
+					</div>
+					<hr></hr>
+				</>
 			) : (
 				<></>
 			)}
-			{(player.santiamMastersPaid === false) && (path === "/parent") ? (
+			{player.santiamMastersPaid === false && path === "/parent" ? (
 				<div>
 					<PayPalButtonSantiamMasters player={player} />
 				</div>
