@@ -1,7 +1,6 @@
 "use client";
 import styles from "./postCard.module.css";
 import React from "react";
-import Link from "next/link";
 import PayPalButtonMaster from "../paypalButton/PaypalButtonMaster";
 import PayPalButtonTournament from "../paypalButton/PaypalButtonSingleTournament";
 import { usePathname } from "next/navigation";
@@ -10,7 +9,6 @@ import PayPalButtonSantiamMasters from "../paypalButton/PaypalButtonSantiamMaste
 
 const PostCard = ({ player }) => {
 	const path = usePathname();
-	const paid = player.duesPaid;
 
 	return (
 		<div className={styles.container}>
@@ -20,38 +18,32 @@ const PostCard = ({ player }) => {
 						{player.firstname} {player.lastname}
 					</h1>
 				</div>
-				<div className={styles.topRight}>
-					<p className={styles.descGender}>{player.gender}</p>
-					<p className={styles.descYear}>{player.year}</p>
-				</div>
-			</div>
-			<div className={styles.bottom}>
-				<div className={styles.bottomRight}>
-					{player.duesPaid == true ? (
-						<div className={styles.paidButton}>
-							<p className={styles.descPaid}>Dues Paid</p>
-						</div>
-					) : (
-						<div className={styles.paidButton}>
-							<p className={styles.descNotPaid}>Dues Not Paid</p>
-						</div>
-					)}
-
-					{player.tournPaid == true ? (
-						<div className={styles.paidButton}>
-							<p className={styles.descPaid}>Tournament Paid</p>
-						</div>
-					) : (
-						<div className={styles.paidButton}>
-							<p className={styles.descNotPaid}>Tournament Not Paid</p>
-						</div>
-					)}
-				</div>
-
-				<div>
-					<button disabled className={styles.button}>
-						Edit
-					</button>
+				<div className={styles.infoSection}>
+					<div className={styles.badges}>
+						<span className={styles.genderBadge}>
+							<span className={styles.badgeIcon}>
+								{player.gender === "Male" ? "♂" : player.gender === "Female" ? "♀" : ""}
+							</span>
+							{player.gender}
+						</span>
+						<span className={styles.levelBadge}>
+							{player.year}
+						</span>
+					</div>
+					<div className={styles.paymentStatus}>
+						<span className={player.duesPaid ? styles.statusPaid : styles.statusNotPaid}>
+							<span className={styles.statusIcon}>
+								{player.duesPaid ? "✓" : "✗"}
+							</span>
+							Dues {player.duesPaid ? "Paid" : "Not Paid"}
+						</span>
+						<span className={player.tournPaid ? styles.statusPaid : styles.statusNotPaid}>
+							<span className={styles.statusIcon}>
+								{player.tournPaid ? "✓" : "✗"}
+							</span>
+							Tournament {player.tournPaid ? "Paid" : "Not Paid"}
+						</span>
+					</div>
 				</div>
 			</div>
 			{(player.year == "Junior" || player.year == "Senior") &
