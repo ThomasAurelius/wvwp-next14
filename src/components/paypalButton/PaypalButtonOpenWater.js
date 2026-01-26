@@ -29,7 +29,7 @@ const PayPalButtonOpenWater = ({ player }) => {
 					amount: {
 						value: "1995.00", // Example amount
 					},
-					description: playerName + "Open Water Tournament Fee",
+					description: playerName + " Open Water Tournament Fee",
 				},
 			],
 		});
